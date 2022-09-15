@@ -1,6 +1,9 @@
+import { useState } from "react";
 import axios from 'axios';
 
 function SignupForm({ form, setForm }) {
+  const [errorMessage, setErrorMessage] = useState(undefined);
+
   const resetForm = (form, setForm) => {
     setForm({
       type: '',
@@ -20,7 +23,9 @@ function SignupForm({ form, setForm }) {
         resetForm(form, setForm);
       })
       .catch((error) => {
-        resetForm(form, setForm);
+        const errorDescription = error.response.data.message;
+        console.log('help?', errorDescription);
+        setErrorMessage(errorDescription);
         console.log(error);
       });
   };
@@ -42,6 +47,8 @@ function SignupForm({ form, setForm }) {
                   onClick={event => handleSubmit(event, form, setForm, 'signup')}>
             Sign me UP!</button>
         </form>
+        {/* { errorMessage && <p className="error-message">{errorMessage}</p> } */}
+        <p className="error-message">!!!! {errorMessage}</p>
       </>
   );
 }

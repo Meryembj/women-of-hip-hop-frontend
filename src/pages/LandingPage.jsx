@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useContext } from 'react';
 
 // CONTEXT
 import { AuthContext } from '../context/auth.context';
@@ -9,6 +8,8 @@ import SignupForm from '../components/SignupForm';
 import LoginForm from '../components/LoginForm';
 
 function LandingPage(props) {
+  const { user } = useContext(AuthContext);
+  
   const [ form, setForm ] = useState({
     type: '',
     username: '',
@@ -21,7 +22,7 @@ function LandingPage(props) {
   const toggleForm = formType => {
     if (!showForm)
       setShowForm(true);
-    setForm({... form, type: formType});
+    setForm({...form, type: formType});
   };
 
   return (
@@ -32,21 +33,6 @@ function LandingPage(props) {
       <button onClick={() => toggleForm('login')}>Login</button>
       {showForm && form.type === 'signup' && <SignupForm form={form} setForm={setForm}/>}
       {showForm && form.type === 'login' && <LoginForm form={form} setForm={setForm}/>}
-      <table>
-        <tbody>
-          <tr>
-            <th>user</th>
-            <th>pwd</th>
-            <th>pic</th>
-          </tr>
-          <tr>
-            <th>{form.username}</th>
-            <th>{form.password}</th>
-            <th><img width='100px' alt="" src={form.image}/></th>
-          </tr>
-        </tbody>
-      </table>
-
     </>
   );
 }

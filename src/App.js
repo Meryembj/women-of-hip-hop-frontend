@@ -10,16 +10,17 @@ import { AuthContext } from './context/auth.context';
 
 // PAGES
 import LandingPage from './pages/LandingPage';
+import HomePage from './pages/HomePage';
 
 
 function App() {
-  const { isLoggedIn, user } = useContext(AuthContext);
+  const { isLoggedIn } = useContext(AuthContext);
   return (
     <div className='App'>
 
       <Routes>
         {!isLoggedIn && <Route path='/' element={<LandingPage />}/>}
-        {/* {isLoggedIn && <Route path='/' element={<HomePage user='user'/>}/>} */}
+        {isLoggedIn && <Route path='/' element={<HomePage />}/>}
       </Routes>
     </div>
   );
