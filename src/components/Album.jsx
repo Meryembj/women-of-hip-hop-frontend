@@ -8,7 +8,7 @@ const Album = ({ name, picture, artist }) => {
       <picture>
         <img src={picture} alt="album" />
       </picture>
-      <p className="artist">{artist}</p>
+      <p className="artist">{artist.name}</p>
     </div>
   );
 };
