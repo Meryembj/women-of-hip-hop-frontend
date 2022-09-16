@@ -1,9 +1,11 @@
+import './style/LandingPage.css';
 import { useState, useContext } from 'react';
 
 // CONTEXT
 import { AuthContext } from '../context/auth.context';
 
 // COMPONENTS
+import Navbar from '../components/Navbar';
 import SignupForm from '../components/SignupForm';
 import LoginForm from '../components/LoginForm';
 
@@ -26,14 +28,26 @@ function LandingPage(props) {
   };
 
   return (
-    <>
-      <h1>WOMEN OF HIP HOP</h1>
-      <h2>Sign up or log in to proceed.</h2>
-      <button onClick={() => toggleForm('signup')}>Signup</button>
-      <button onClick={() => toggleForm('login')}>Login</button>
-      {showForm && form.type === 'signup' && <SignupForm form={form} setForm={setForm}/>}
-      {showForm && form.type === 'login' && <LoginForm form={form} setForm={setForm}/>}
-    </>
+    <div className='LandingPage'>
+      <section className='firstGlance'>
+        <div className='title'>
+          <h1>WOMEN</h1>
+          <h1 className='outlined'>OF</h1>
+          <h1 className='outlined'>HIP HOP</h1>
+        </div>
+        <div className="options">
+          <h2>Sign up or log in to proceed.</h2>
+          <div className="buttons">
+            <button onClick={() => toggleForm('signup')}>Signup</button>
+            <button onClick={() => toggleForm('login')}>Login</button>
+          </div>
+        </div>
+      </section>
+      <section>
+        {showForm && form.type === 'signup' && <SignupForm form={form} setForm={setForm}/>}
+        {showForm && form.type.includes('login') && <LoginForm form={form} setForm={setForm}/>}
+      </section>
+    </div>
   );
 }
 

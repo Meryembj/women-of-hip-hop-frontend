@@ -1,15 +1,20 @@
-// src/pages/ApartmentsPage.js
+import { useContext } from 'react'; 
+
+import Navbar from '../components/Navbar';
+
+import { AuthContext } from '../context/auth.context';
 
 
-function Home() {
-  
+
+function Home(props) {
+  const { user } = useContext(AuthContext);
   return (
-    <div>
-      <h3>Women of hip-hop</h3>
-    
-    </div>
-  )
+    <>
+      <Navbar />
+      <h1>Hello {user.username}! ur logged in.</h1>
+      <img width='100px' alt="" src={user.image}/>
+    </>
+  );
 }
-
 
 export default Home;
