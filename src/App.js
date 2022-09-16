@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 import { Routes, Route } from 'react-router-dom';
 import { useContext } from 'react'; 
 
@@ -10,8 +10,9 @@ import { AuthContext } from './context/auth.context';
 
 // PAGES
 import LandingPage from './pages/LandingPage';
-import HomePage from './pages/HomePage';
-
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Albums from "./components/Albums";
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -19,8 +20,10 @@ function App() {
     <div className='App'>
 
       <Routes>
+        <Route path="/" element={<Layout />} />
         {!isLoggedIn && <Route path='/' element={<LandingPage />}/>}
-        {isLoggedIn && <Route path='/' element={<HomePage />}/>}
+        {isLoggedIn && <Route path='/' element={<Home />}/>}
+        <Route  path="/albums"  element={<Albums />} />
       </Routes>
     </div>
   );
