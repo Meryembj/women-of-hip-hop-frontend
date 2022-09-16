@@ -1,3 +1,4 @@
+import './LandingPage.css';
 import { useState, useContext } from 'react';
 
 // CONTEXT
