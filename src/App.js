@@ -19,11 +19,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Layout />}>
           {!isLoggedIn && <Route path="/" element={<LandingPage />} />}
           {isLoggedIn && <Route path="/" element={<Home />} />}
           <Route path="/albums" element={<Albums />} />
-        </Route>
       </Routes>
     </div>
   );
