@@ -20,7 +20,6 @@ function LoginForm({ form, setForm }) {
         navigate('/'); 
       })
       .catch((error) => {
-        console.log(error);
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
       });
@@ -28,19 +27,23 @@ function LoginForm({ form, setForm }) {
 
   return (
     <>
-      <form>
+      <form id='login'>
         <h2>{'Welcome back!'}</h2>
-        <label>Username:</label>
-        <input type="text" name="username" value={form.username}
-               onChange={event => setForm({...form, username: event.target.value})} />
-        <label>Password:</label>
-        <input type="password" name="password" value={form.password}
-               onChange={event => setForm({...form, password: event.target.value})} />
+        { errorMessage && <p className="errorMessage">{errorMessage}</p> }
+        <div className="inputField">
+          <label>Username</label>
+          <input type="text" name="username" value={form.username}
+                 onChange={event => setForm({...form, username: event.target.value})} />
+        </div>
+        <div className="inputField">
+          <label>Password</label>
+          <input type="password" name="password" value={form.password}
+                 onChange={event => setForm({...form, password: event.target.value})} />
+        </div>
         <button type="submit" className="form-btn"
-                onClick={event => handleSubmit(event, form, setForm, 'login')}>
-          Log in</button>
+                  onClick={event => handleSubmit(event, form, setForm, 'login')}>
+            Log in</button>
       </form>
-       { errorMessage && <p className="error-message">{errorMessage}</p> }
     </>
   );
 };
