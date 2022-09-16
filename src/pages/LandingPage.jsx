@@ -45,7 +45,7 @@ function LandingPage(props) {
       </section>
       <section>
         {showForm && form.type === 'signup' && <SignupForm form={form} setForm={setForm}/>}
-        {showForm && form.type === 'login' && <LoginForm form={form} setForm={setForm}/>}
+        {showForm && form.type.includes('login') && <LoginForm form={form} setForm={setForm}/>}
       </section>
     </div>
   );

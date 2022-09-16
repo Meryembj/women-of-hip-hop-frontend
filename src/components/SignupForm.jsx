@@ -1,25 +1,19 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+
+const API_URL = 'https://women-of-hip-hop.herokuapp.com/auth/';
 
 function SignupForm({ form, setForm }) {
   const [errorMessage, setErrorMessage] = useState(undefined);
+  const navigate = useNavigate();
 
-  const resetForm = (form, setForm) => {
-    setForm({
-      type: '',
-      username: '',
-      password: '',
-      image: ''
-    });
-  };
-
-  const handleSubmit = (event, form, setForm, type) => {
+  const handleSubmit = (event, form, setForm) => {
     event.preventDefault();
-    const body = form;
-    axios.post(`https://women-of-hip-hop.herokuapp.com/auth/${type}`, body)
+    axios.post(`${API_URL}signup`, form)
       .then(response => {
         console.log('response status', response.status);
-        resetForm(form, setForm);
+        setForm({...form, type: 'login-post-signup'});
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -44,7 +38,7 @@ function SignupForm({ form, setForm }) {
           </div>
           <div className="inputField">
             
-            <label>Image (as a url):</label>
+            <label>Image (as a url)</label>
             <input type="url" name="image" value={form.image}
                    onChange={event => setForm({...form, image: event.target.value})} />
           </div>

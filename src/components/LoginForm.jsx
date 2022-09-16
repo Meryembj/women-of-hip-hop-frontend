@@ -4,16 +4,16 @@ import axios from "axios";
 
 import { AuthContext } from '../context/auth.context';
 
+const API_URL = 'https://women-of-hip-hop.herokuapp.com/auth/';
 
 function LoginForm({ form, setForm }) {
   const [ errorMessage, setErrorMessage ] = useState(undefined);
   const { storeToken, authenticateUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleSubmit = (event, form, setForm, type) => {
+  const handleSubmit = (event, form, setForm) => {
     event.preventDefault();
-    const body = form;
-    axios.post(`https://women-of-hip-hop.herokuapp.com/auth/${type}`, body)
+    axios.post(`${API_URL}login`, form)
       .then(response => {
         storeToken(response.data.token);
         authenticateUser();
@@ -28,7 +28,8 @@ function LoginForm({ form, setForm }) {
   return (
     <>
       <form id='login'>
-        <h2>{'Welcome back!'}</h2>
+        <h2>{form.type === 'login' ? 'Welcome back!'
+             : 'Registration successful. Log in now:'}</h2>
         { errorMessage && <p className="errorMessage">{errorMessage}</p> }
         <div className="inputField">
           <label>Username</label>
