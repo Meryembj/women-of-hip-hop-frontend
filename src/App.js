@@ -10,7 +10,9 @@ import Albums from "./components/AllAlbums/Albums";
 import Artists from "./components/AllArtists/Artists";
 import Favorites from "./components/Favorites/Favorites";
 import NewAlbum from "./components/MyAlbums/NewAlbum";
+import NewArtist from "./components/MyArtists/NewArtist";
 import MyAlbums from "./components/MyAlbums/MyAlbums";
+import MyArtists from "./components/MyArtists/MyArtists";
 
 // PAGES
 import LandingPage from "./pages/LandingPage";
@@ -31,7 +33,10 @@ function App() {
         <Route path="/artists" element={<Artists />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/createAlbum" element={<NewAlbum />} />
+        <Route path="/createArtist" element={<NewArtist />} />
+
         <Route path="/myAlbums" element={<MyAlbums />} />
+        <Route path="/myArtists" element={<MyArtists />} />
       </Routes>
     </div>
   );
