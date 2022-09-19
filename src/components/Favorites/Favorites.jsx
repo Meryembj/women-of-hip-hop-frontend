@@ -21,7 +21,7 @@ function Favorites() {
 
   return (
     <div>
-          <Navbar />
+      <Navbar />
       <h3>List of favorites</h3>
       <ul>
         {favorites.map((favorite) => {
