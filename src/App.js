@@ -7,15 +7,14 @@ import { AuthContext } from "./context/auth.context";
 
 // COMPONENTS
 import Albums from "./components/Albums";
+import Artists from "./components/Artists";
+import Favorites from "./components/Favorites";
 
 // PAGES
 import LandingPage from "./pages/LandingPage";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import Albums from "./components/Albums";
-import Artists from "./components/Artists";
-import Favorites from "./components/Favorites";
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
