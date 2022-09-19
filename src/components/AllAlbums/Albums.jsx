@@ -20,23 +20,25 @@ function Albums() {
       });
   }, []);
   return (
-    <div>
+    <>
       <Navbar />
-      <h3>List of albums</h3>
       <div>
-        {albums.map((album) => {
-          return (
-            <div key={album._id}>
-              <Album
-                name={album.name}
-                picture={album.picture}
-                artist={album.artist}
-              />
-            </div>
-          );
-        })}
+        <h3>List of albums</h3>
+        <div>
+          {albums.map((album) => {
+            return (
+              <div key={album._id}>
+                <Album
+                  name={album.name}
+                  picture={album.picture}
+                  artist={album.artist}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
