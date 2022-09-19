@@ -17,25 +17,24 @@ function Artists() {
         setArtists(response.data.artists);
       });
   }, []);
-  
 
   return (
     <div>
-      <h3>List of albums</h3>
-      <ul>
+      <h3>List of Artists</h3>
+      <div>
         {artists.map((artist) => {
           return (
-            <li key={artist._id}>
+            <div key={artist._id}>
               <Artist
                 name={artist.name}
                 picture={artist.picture}
                 miniBio={artist.miniBio}
                 flagSong={artist.flagSong}
               />
-            </li>
+            </div>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 }
