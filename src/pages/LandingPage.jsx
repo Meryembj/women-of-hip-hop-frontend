@@ -6,8 +6,8 @@ import { AuthContext } from '../context/auth.context';
 
 // COMPONENTS
 import Navbar from '../components/Navbar';
-import SignupForm from '../components/SignupForm';
-import LoginForm from '../components/LoginForm';
+import SignupForm from '../components/AuthForms/SignupForm';
+import LoginForm from '../components/AuthForms/LoginForm';
 
 function LandingPage(props) {
   const { user } = useContext(AuthContext);
