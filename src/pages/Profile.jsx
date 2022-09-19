@@ -20,13 +20,13 @@ function Profile(props) {
       <Navbar />
       <div className="profileBody">
         <div className="cardsContainer">
-          <PageCard pageName="Your Favorites" path="favorites"
+          <PageCard pageName="Your Favorites" path="/favorites"
                     pageDescription="See and edit your favorite artists."
                     pageThumbnail="https://nypost.com/wp-content/uploads/sites/2/2016/09/rihannafur.jpg?quality=75&strip=all"/>
-          <PageCard pageName="Your albums" path=""
+          <PageCard pageName="Your albums" path="/myAlbums"
                     pageDescription="See and manage the albums you've imported."
                     pageThumbnail="" />
-          <PageCard pageName="Your artists" path=""
+          <PageCard pageName="Your artists" path="/myArtists"
                     pageDescription="See and manage the artists you've imported."
                     pageThumbnail="" />
         </div>

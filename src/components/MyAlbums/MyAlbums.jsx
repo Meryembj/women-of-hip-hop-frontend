@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Album from "../AllAlbums/Album";
+import Navbar from "../Navbar";
 
 function MyAlbums() {
   const [albums, setAlbums] = useState([]);
@@ -19,6 +20,7 @@ function MyAlbums() {
   }, []);
   return (
     <div>
+      <Navbar />
       <h3>All the albums you created</h3>
       <ul>
         {albums.map((album) => {
