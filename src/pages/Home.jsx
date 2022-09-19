@@ -1,8 +1,11 @@
 import { useContext } from 'react'; 
+import { Link } from 'react-router-dom';
 
-import Navbar from '../components/Navbar';
-
+// CONTEXT
 import { AuthContext } from '../context/auth.context';
+
+// COMPONENTS
+import Navbar from '../components/Navbar';
 
 
 
@@ -11,8 +14,13 @@ function Home(props) {
   return (
     <>
       <Navbar />
-      <h1>Hello {user.username}! ur logged in.</h1>
-      <img width='100px' alt="" src={user.image}/>
+      <div className="main">
+        <p>Use our database of female Hip-Hop artists to discover new artists, listen to and save your favorite ones, and promote their relevance on the scene.
+          For a mature audience !</p>
+        <div className="cardsContainer">
+          {/* CARDS */}
+        </div>
+      </div>
     </>
   );
 }
