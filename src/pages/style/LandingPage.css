@@ -8,24 +8,21 @@
     align-items: center;
 }
 
-.title {
+.LandingPage .title {
     padding: 2em 0;
 }
 
-.title h1 {
+.LandingPage .title h1 {
     color: var(--yellow);
     font-family: 'Raleway', sans-serif;
-    font-size: 5em;
-    line-height: 0.3em;
+    font-size: 7em;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 0.8em;
     text-align: center;
-    -webkit-transform:scale(1.5,1); /* Safari and Chrome */
-    -moz-transform:scale(1.5,1); /* Firefox */
-    -ms-transform:scale(1.5,1); /* IE 9 */
-    -o-transform:scale(1.5,1); /* Opera */
-    transform:scale(1.5,1); /* W3C */
 }
 
-.title .outlined {
+.LandingPage .title .outlined {
     color: var(--grey);
     text-shadow: -1.5px -1.5px 0 var(--yellow),
 		 1.5px -1.5px 0 var(--yellow),
@@ -37,12 +34,14 @@
     background-color: var(--white);
     padding: 2em;
     border-radius: 25px;
+    text-align: center;
 }
 
 .options h2, form h2 {
     color: black;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
+    font-size: 1.6em;
 }
 
 .options .buttons {
@@ -55,7 +54,7 @@
 .options button, form button {
     color: var(--grey);
     background-color: var(--cream);
-    border: 1px solid var(--cream);
+    border: 2px solid var(--cream);
     border-radius: 8px;
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
@@ -71,6 +70,7 @@
 .options button:hover, form button:hover {
     color: var(--cream);
     background-color: var(--grey);
+    border: 2px solid var(--cream);
 }
 
 form {
