@@ -21,19 +21,19 @@ function Albums() {
   return (
     <div>
       <h3>List of albums</h3>
-      <ul>
+      <div>
         {albums.map((album) => {
           return (
-            <li key={album._id}>
+            <div key={album._id}>
               <Album
                 name={album.name}
                 picture={album.picture}
                 artist={album.artist}
               />
-            </li>
+            </div>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 }
