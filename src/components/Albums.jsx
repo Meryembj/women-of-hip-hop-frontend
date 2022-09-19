@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Album from "./Album";
+import "./Albums.css";
 
 function Albums() {
   const [albums, setAlbums] = useState([]);
@@ -17,16 +18,13 @@ function Albums() {
         setAlbums(response.data);
       });
   }, []);
-
   return (
     <div>
       <h3>List of albums</h3>
       <ul>
         {albums.map((album) => {
-          console.log("Hello", album);
-
           return (
-            <li key="album.name">
+            <li key={album._id}>
               <Album
                 name={album.name}
                 picture={album.picture}
