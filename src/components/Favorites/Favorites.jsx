@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Favorite from "./Favorite";
+import Navbar from "../Navbar";
 
 function Favorites() {
   const [favorites, setFavorites] = useState([]);
@@ -20,6 +21,7 @@ function Favorites() {
 
   return (
     <div>
+          <Navbar />
       <h3>List of favorites</h3>
       <ul>
         {favorites.map((favorite) => {

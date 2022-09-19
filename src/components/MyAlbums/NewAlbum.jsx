@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
 
 export const CreateAlbum = () => {
   const [name, setName] = useState("");
@@ -30,6 +31,7 @@ export const CreateAlbum = () => {
 
   return (
     <div>
+          <Navbar />
       <h1>Create a new album</h1>
       <form onSubmit={handleSubmit} class="form-group">
         <label>Album Name:</label>
