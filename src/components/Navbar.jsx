@@ -6,20 +6,18 @@ import { AuthContext } from "../context/auth.context";
 
 // COMPONENTS
 import { BsArrowBarRight } from 'react-icons/bs';
-import { IoPersonOutline } from 'react-icons/io5';
 
 function Navbar(props) {
-  const { isLoggedIn, logOutUser } = useContext(AuthContext);
+  const { logOutUser, user } = useContext(AuthContext);
   return (
     <div className='Navbar'>
       <Link to="/"><h1>WOHH</h1></Link>
       <div className='userOptions'>
         <Link to="/profile">
-          <button><span>Profile <IoPersonOutline /></span></button>
+          <button>Profile <img alt="profile" src={user.image}/></button>
+          
         </Link>
-        <button onClick={logOutUser}>
-          <span>Log out <BsArrowBarRight /></span>
-        </button>
+        <button onClick={logOutUser}>Log out <BsArrowBarRight /></button>
       </div>
     </div>
   );

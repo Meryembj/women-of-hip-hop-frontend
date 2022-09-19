@@ -35,7 +35,7 @@ code {
 }
 
 .Navbar .userOptions {
-    width: 20vw;
+    width: 16vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -54,7 +54,7 @@ code {
     text-align: center;
     display: flex;
     align-items: center;
-    padding: 13px 13px;
+    padding: 10px 10px;
     cursor: pointer;
 }
 
@@ -64,7 +64,15 @@ code {
 }
 
 .userOptions button svg {
-    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.userOptions button img {
+    margin-left: 10px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
 }
 
 /* FONTS */

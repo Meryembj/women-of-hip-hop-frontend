@@ -6,13 +6,13 @@ import { useContext } from "react";
 import { AuthContext } from "./context/auth.context";
 
 // COMPONENTS
-// components imports here
+import Albums from "./components/Albums";
 
 // PAGES
 import LandingPage from "./pages/LandingPage";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
-import Albums from "./components/Albums";
+import Profile from "./pages/Profile";
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -22,6 +22,7 @@ function App() {
           {!isLoggedIn && <Route path="/" element={<LandingPage />} />}
           {isLoggedIn && <Route path="/" element={<Home />} />}
           <Route path="/albums" element={<Albums />} />
+      <Route path="/profile" element={<Profile />} />
       </Routes>
     </div>
   );
