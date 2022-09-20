@@ -1,4 +1,4 @@
-import './style/LandingPage.css';
+import './styles/LandingPage.css';
 import { useState, useContext } from 'react';
 
 // CONTEXT

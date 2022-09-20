@@ -1,4 +1,4 @@
-import './style/Profile.css';
+import './styles/Profile.css';
 import { useState, useContext } from "react"; 
 
 // CONTEXT

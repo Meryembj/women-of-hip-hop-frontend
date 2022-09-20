@@ -1,5 +1,5 @@
 import '../components/styles/PageCard.css';
-import './style/Home.css';
+import './styles/Home.css';
 import { useContext } from 'react'; 
 
 // CONTEXT
