@@ -15,7 +15,7 @@ function Navbar(props) {
       <Link to="/"><h1 className='navHome'>WOHH</h1></Link>
       <div className='userOptions'>
         <Link to="/profile">
-          <button>Profile <img alt="profile" src={user.image}/></button>
+    <button>Profile <img alt="profile" src={user.picture}/></button>
           
         </Link>
         <button onClick={logOutUser}>Log out <BsArrowBarRight /></button>

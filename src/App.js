@@ -14,7 +14,6 @@ import MyAlbums from "./components/MyAlbums/MyAlbums";
 
 // PAGES
 import LandingPage from "./pages/LandingPage";
-import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import { BsNewspaper } from "react-icons/bs";

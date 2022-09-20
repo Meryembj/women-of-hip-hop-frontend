@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 const API_URL = 'https://women-of-hip-hop.herokuapp.com/auth/';
 
 function SignupForm({ form, setForm }) {
   const [errorMessage, setErrorMessage] = useState(undefined);
-  const navigate = useNavigate();
 
   const handleSubmit = (event, form, setForm) => {
     event.preventDefault();
@@ -38,9 +36,9 @@ function SignupForm({ form, setForm }) {
           </div>
           <div className="inputField">
             
-            <label>Image (as a url)</label>
-            <input type="url" name="image" value={form.image}
-                   onChange={event => setForm({...form, image: event.target.value})} />
+            <label>Picture (as a url)</label>
+            <input type="url" name="picture" value={form.picture}
+                   onChange={event => setForm({...form, picture: event.target.value})} />
           </div>
           <button type="submit" className="form-btn"
                   onClick={event => handleSubmit(event, form, setForm, 'signup')}>

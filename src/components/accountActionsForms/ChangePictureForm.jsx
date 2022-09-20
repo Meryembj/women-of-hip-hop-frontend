@@ -9,12 +9,12 @@ const API_URL = 'https://women-of-hip-hop.herokuapp.com/auth/change-picture';
 
 function ChangePictureForm(props) {
   const { user, authenticateUser } = useContext(AuthContext);
-  const [ newPicture, setNewPicture ] = useState(user.image);
+  const [ newPicture, setNewPicture ] = useState(user.picture);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    axios.patch(`${API_URL}`, {image: newPicture}, {
+    axios.patch(`${API_URL}`, {picture: newPicture}, {
       headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` }})
       .then(response => {
         console.log(response);
