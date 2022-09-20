@@ -9,8 +9,10 @@ import { AuthContext } from "./context/auth.context";
 import Albums from "./components/AllAlbums/Albums";
 import Artists from "./components/AllArtists/Artists";
 import Favorites from "./components/Favorites/Favorites";
-import NewAlbum from "./components/MyAlbums/NewAlbum";
+import NewAlbum from "./components/MyAlbums/CreateAlbum";
+import NewArtist from "./components/MyArtists/CreateArtist";
 import MyAlbums from "./components/MyAlbums/MyAlbums";
+import MyArtists from "./components/MyArtists/MyArtists";
 
 // PAGES
 import LandingPage from "./pages/LandingPage";
@@ -29,8 +31,10 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/artists" element={<Artists />} />
         <Route path="/favorites" element={<Favorites />} />
-        <Route path="/createAlbum" element={<NewAlbum />} />
         <Route path="/myAlbums" element={<MyAlbums />} />
+        <Route path="/createAlbum" element={<NewAlbum />} />
+        <Route path="/myArtists" element={<MyArtists />} />
+        <Route path="/createArtist" element={<NewArtist />} />
       </Routes>
     </div>
   );

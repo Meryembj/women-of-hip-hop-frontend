@@ -6,7 +6,7 @@ const Artist = ({ name, picture, miniBio, flagSong }) => {
       <div class="row">
         <div class="col">
           <div class="card" style={{ width: "18rem" }}>
-            <img class="card-img-top" src={picture} alt="Card cap"></img>
+            <img class="card-img-top" src={picture} alt="profile"></img>
             <div class="card-body">
               <h5 class="card-title">{name}</h5>
               <p class="card-text">{miniBio}</p>

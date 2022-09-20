@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Album from "./Album";
+import Navbar from "../Navbar";
 import "./Albums.css";
 
 function Albums() {
@@ -19,22 +20,25 @@ function Albums() {
       });
   }, []);
   return (
-    <div>
-      <h3>List of albums</h3>
+    <>
+      <Navbar />
       <div>
-        {albums.map((album) => {
-          return (
-            <div key={album._id}>
-              <Album
-                name={album.name}
-                picture={album.picture}
-                artist={album.artist}
-              />
-            </div>
-          );
-        })}
+        <h3>List of albums</h3>
+        <div>
+          {albums.map((album) => {
+            return (
+              <div key={album._id}>
+                <Album
+                  name={album.name}
+                  picture={album.picture}
+                  artist={album.artist}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

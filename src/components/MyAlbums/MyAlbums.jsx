@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Album from "../AllAlbums/Album";
+import MyAlbum from "./MyAlbum";
+import Navbar from "../Navbar";
 
 function MyAlbums() {
   const [albums, setAlbums] = useState([]);
@@ -18,23 +19,26 @@ function MyAlbums() {
       });
   }, []);
   return (
-    <div>
-      <h3>All the albums you created</h3>
-      <ul>
-        {albums.map((album) => {
-          return (
-            <div key={album._id}>
-              <Album
-                name={album.name}
-                picture={album.picture}
-                songs={album.songs}
-                artist={album.artist.name}
-              />
-            </div>
-          );
-        })}
-      </ul>
-    </div>
+    <>
+      <Navbar />
+      <div>
+        <h3>All the albums you created</h3>
+        <ul>
+          {albums.map((album) => {
+            return (
+              <div key={album._id}>
+                <MyAlbum
+                  name={album.name}
+                  picture={album.picture}
+                  songs={album.songs}
+                  artist={album.artist.name}
+                />
+              </div>
+            );
+          })}
+        </ul>
+      </div>
+    </>
   );
 }
 
