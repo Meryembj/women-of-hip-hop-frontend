@@ -20,7 +20,6 @@ function Albums() {
   }, []);
   return (
     <>
-      <Navbar />
       <div>
         <h3>List of albums</h3>
         <div>

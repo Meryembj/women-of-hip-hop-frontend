@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import CreateArtistForm from "../components/CreateArtistForm";
 import Navbar from "../components/Navbar";
 
 export const CreateAlbum = () => {
@@ -9,6 +10,8 @@ export const CreateAlbum = () => {
   const [picture, setPicture] = useState();
   const [songs, setSongs] = useState("");
   const [artist, setArtist] = useState("");
+  const [errorMessage, setErrorMessage] = useState(undefined);
+  const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -26,12 +29,14 @@ export const CreateAlbum = () => {
       .then((response) => {
         navigate("/myAlbums");
       })
-      .catch((err) => console.log(err));
+      .catch((error) => {
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
+      });
   };
 
   return (
     <div>
-          <Navbar />
       <h1>Create a new album</h1>
       <form onSubmit={handleSubmit} class="form-group">
         <label>Album Name:</label>
@@ -66,7 +71,21 @@ export const CreateAlbum = () => {
         <button type="submit" class="btn btn-primary">
           Create
         </button>
+        {errorMessage && (
+          <div className="artistNotFound">
+            <p className="errorMessage">{errorMessage}</p>
+            <button className="Create artist" onClick={() => setShowForm(true)}>
+              Create Artist
+            </button>
+          </div>
+        )}
       </form>
+      {showForm && (
+        <CreateArtistForm
+          setErrorMessage={setErrorMessage}
+          setShowForm={setShowForm}
+        />
+      )}
     </div>
   );
 };

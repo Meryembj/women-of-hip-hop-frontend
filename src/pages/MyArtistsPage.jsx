@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Artist from "../components/AllArtists/ArtistCard";
-import MyArtist from "../components/MyArtists/MyArtistCard";
+import MyArtistCard from "../components/MyArtists/MyArtistCard";
 import Navbar from "../components/Navbar";
 
 function MyArtists() {
@@ -21,21 +20,22 @@ function MyArtists() {
   }, []);
   return (
     <>
-    <Navbar />
-    <div>
-      {artists.map((artist) => {
-        return (
-          <div key={artist._id}>
-            <MyArtist
-              name={artist.name}
-              picture={artist.picture}
-              miniBio={artist.miniBio}
-              flagSong={artist.flagSong}
-            />
-          </div>
-        );
-      })}
-    </div>
+      <div>
+        <h3>All the artists you created</h3>
+        {artists.map((artist) => {
+          return (
+            <div key={artist._id}>
+              <MyArtistCard
+                name={artist.name}
+                picture={artist.picture}
+                miniBio={artist.miniBio}
+                flagSong={artist.flagSong}
+                artist={artist}
+              />
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 }

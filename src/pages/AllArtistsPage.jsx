@@ -27,7 +27,6 @@ function Artists() {
 
   return (
     <>
-      <Navbar />
       <div>
         <BsArrowBarLeft onClick={() => navigate(-1)}></BsArrowBarLeft>
         <h3>List of Artists</h3>
