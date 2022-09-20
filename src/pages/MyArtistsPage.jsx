@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Artist from "../AllArtists/Artist";
-import MyArtist from "./MyArtist";
-import Navbar from "../Navbar";
+import Artist from "../components/AllArtists/ArtistCard";
+import MyArtist from "../components/MyArtists/MyArtistCard";
+import Navbar from "../components/Navbar";
 
 function MyArtists() {
   const [artists, setArtists] = useState([]);

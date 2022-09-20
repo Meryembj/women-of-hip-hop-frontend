@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { BsArrowBarLeft } from "react-icons/bs";
 
 import axios from "axios";
-import Artist from "./Artist";
-import Navbar from "../Navbar";
+import Artist from "../components/AllArtists/ArtistCard";
+import Navbar from "../components/Navbar";
 
 function Artists() {
   const [artists, setArtists] = useState([]);

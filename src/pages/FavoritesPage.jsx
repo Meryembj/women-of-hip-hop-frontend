@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Favorite from "./Favorite";
-import Navbar from "../Navbar";
+import Favorite from "../components/Favorites/Favorite";
+import Navbar from "../components/Navbar";
 
 function Favorites() {
   const [favorites, setFavorites] = useState([]);

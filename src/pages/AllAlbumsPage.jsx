@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import MyAlbum from "./MyAlbum";
-import Navbar from "../Navbar";
+import Album from "../components/AllAlbums/AlbumCard";
+import Navbar from "../components/Navbar";
 
-function MyAlbums() {
+function Albums() {
   const [albums, setAlbums] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://women-of-hip-hop.herokuapp.com/albums/myAlbums", {
+      .get("https://women-of-hip-hop.herokuapp.com/albums", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },
@@ -22,24 +22,23 @@ function MyAlbums() {
     <>
       <Navbar />
       <div>
-        <h3>All the albums you created</h3>
-        <ul>
+        <h3>List of albums</h3>
+        <div>
           {albums.map((album) => {
             return (
               <div key={album._id}>
-                <MyAlbum
+                <Album
                   name={album.name}
                   picture={album.picture}
-                  songs={album.songs}
-                  artist={album.artist.name}
+                  artist={album.artist}
                 />
               </div>
             );
           })}
-        </ul>
+        </div>
       </div>
     </>
   );
 }
 
-export default MyAlbums;
+export default Albums;

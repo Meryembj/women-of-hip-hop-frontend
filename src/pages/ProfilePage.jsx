@@ -7,9 +7,9 @@ import { AuthContext } from "../context/auth.context";
 // COMPONENTS
 import Navbar from "../components/Navbar";
 import PageCard from "../components/PageCard";
-import ChangePasswordForm from "../components/accountActionsForms/ChangePasswordForm";
-import ChangePictureForm from "../components/accountActionsForms/ChangePictureForm";
-import DeleteAccountForm from "../components/accountActionsForms/DeleteAccountForm";
+import ChangePasswordForm from "../components/AccountActionsForms/ChangePasswordForm";
+import ChangePictureForm from "../components/AccountActionsForms/ChangePictureForm";
+import DeleteAccountForm from "../components/AccountActionsForms/DeleteAccountForm";
 
 function Profile(props) {
   const { user } = useContext(AuthContext);

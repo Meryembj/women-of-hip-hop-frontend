@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../Navbar";
+import Navbar from "../components/Navbar";
 
 export const CreateAlbum = () => {
   const [name, setName] = useState("");

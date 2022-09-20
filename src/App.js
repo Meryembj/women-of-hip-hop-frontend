@@ -6,19 +6,19 @@ import { useContext } from "react";
 import { AuthContext } from "./context/auth.context";
 
 // COMPONENTS
-import Albums from "./components/AllAlbums/Albums";
-import Artists from "./components/AllArtists/Artists";
-import Favorites from "./components/Favorites/Favorites";
-import NewAlbum from "./components/MyAlbums/CreateAlbum";
-import NewArtist from "./components/MyArtists/CreateArtist";
-import MyAlbums from "./components/MyAlbums/MyAlbums";
-import MyArtists from "./components/MyArtists/MyArtists";
+import Albums from "./pages/AllAlbumsPage";
+import Artists from "./pages/AllArtistsPage";
+import Favorites from "./pages/FavoritesPage";
+import NewAlbum from "./pages/CreateAlbumPage";
+import NewArtist from "./pages/CreateArtistPage";
+import MyAlbums from "./pages/MyAlbumPage";
+import MyArtists from "./pages/MyArtistsPage";
 
 // PAGES
 import LandingPage from "./pages/LandingPage";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import Layout from "./pages/LayoutPage";
+import Home from "./pages/HomePage";
+import Profile from "./pages/ProfilePage";
 import { BsNewspaper } from "react-icons/bs";
 
 function App() {
