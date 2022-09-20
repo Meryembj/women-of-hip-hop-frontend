@@ -1,5 +1,5 @@
-import "./style/LandingPage.css";
-import { useState, useContext } from "react";
+import './styles/LandingPage.css';
+import { useState, useContext } from 'react';
 
 // CONTEXT
 import { AuthContext } from "../context/auth.context";

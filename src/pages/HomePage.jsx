@@ -1,7 +1,6 @@
 import '../components/styles/PageCard.css';
-import './style/Home.css';
+import './styles/Home.css';
 import { useContext } from 'react'; 
-import { Link } from 'react-router-dom';
 
 // CONTEXT
 import { AuthContext } from '../context/auth.context';
@@ -28,7 +27,7 @@ function Home(props) {
                     pageThumbnail='https://nypost.com/wp-content/uploads/sites/2/2016/09/rihannafur.jpg?quality=75&strip=all'/>
           <PageCard pageName='All Artists' path='artists'
                     pageDescription='Get a list of all the artists on our database.'
-                    pageThumbnail='https://images.squarespace-cdn.com/content/v1/5127db07e4b043d5dffeb39b/1450668190349-MU7PEG8705WPIYGXDD1W/image-asset.jpeg' />
+                    pageThumbnail='https://pictures.squarespace-cdn.com/content/v1/5127db07e4b043d5dffeb39b/1450668190349-MU7PEG8705WPIYGXDD1W/picture-asset.jpeg' />
         </div>
         <div className="cardsContainer">
           <PageCard pageName='All Albums' path='albums'
@@ -36,7 +35,7 @@ function Home(props) {
                     pageThumbnail='https://e.snmc.io/i/600/w/438060b5ef8f47b62f4da00bef22acb9/8668847/meryl-quarantaine-Cover-Art.jpg'/>
           <PageCard pageName='Profile' path='profile'
                     pageDescription='See and edit your collections and manage your account.'
-                    pageThumbnail={user.image} />
+                    pageThumbnail={user.picture} />
         </div>
       </div>
     </>

@@ -16,7 +16,6 @@ root.render(
       <AuthProviderWrapper>
         <App />
       </AuthProviderWrapper>
-
     </Router>
   </React.StrictMode>
 );

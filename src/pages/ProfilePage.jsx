@@ -1,4 +1,4 @@
-import './style/Profile.css';
+import './styles/Profile.css';
 import { useState, useContext } from "react"; 
 
 // CONTEXT
@@ -31,21 +31,21 @@ function Profile(props) {
                     pageThumbnail="" />
         </div>
         <div className="accountSettings">
-          <h1> <img className="you" alt="you" src={user.image}/>
+          <h1> <img className="you" alt="you" src={user.picture}/>
             Account Settings</h1>
           <ul className="accountActions">
-            <li className="action">
-              <button onClick={() => setActive(active !== 1 ? 1 : 0)}>
+            <li>
+              <button className="action" onClick={() => setActive(active !== 1 ? 1 : 0)}>
                 Change your password</button>
               {active === 1 && <ChangePasswordForm />}
             </li>
-            <li className="action">
-              <button  onClick={() => setActive(active !== 2 ? 2 : 0)}>
+            <li>
+              <button className="action" onClick={() => setActive(active !== 2 ? 2 : 0)}>
                 Change your profile picture</button>
               {active === 2 && <ChangePictureForm />}
             </li>
-            <li className="action">
-              <button  onClick={() => setActive(active !== 3 ? 3 : 0)}>
+            <li>
+              <button className="action" onClick={() => setActive(active !== 3 ? 3 : 0)}>
                 Delete your account</button>
               {active === 3 && <DeleteAccountForm />}
             </li>
