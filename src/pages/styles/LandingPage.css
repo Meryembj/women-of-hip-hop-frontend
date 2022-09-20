@@ -1,0 +1,116 @@
+/* STYLE */
+.LandingPage {
+    height: 100vh;
+    background-color: var(--grey);
+    display: flex;
+    flex-direction: columns;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.LandingPage .title {
+    padding: 2em 0;
+}
+
+.LandingPage .title h1 {
+    color: var(--yellow);
+    font-family: 'Raleway', sans-serif;
+    font-size: 7em;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 0.8em;
+    text-align: center;
+}
+
+.LandingPage .title .outlined {
+    color: var(--grey);
+    text-shadow: -1.5px -1.5px 0 var(--yellow),
+		 1.5px -1.5px 0 var(--yellow),
+		 -1.5px 1.5px 0 var(--yellow),
+		 1.5px 1.5px 0 var(--yellow);
+}
+
+.options, form {
+    background-color: var(--white);
+    padding: 2em;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.options h2, form h2 {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 1.6em;
+}
+
+.options .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 3em 0 0 0;
+}
+
+.options button, form button {
+    color: var(--grey);
+    background-color: var(--cream);
+    border: 2px solid var(--cream);
+    border-radius: 8px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 10px;
+    text-align: center;
+    display: inline-block;
+    padding: 13px 13px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.options button:hover, form button:hover {
+    color: var(--cream);
+    background-color: var(--grey);
+    border: 2px solid var(--cream);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+#login {
+    height: 55vh;
+    width: 20vw;
+}
+
+#signup {
+    height: 65vh;
+    width: 20vw;
+}
+
+.inputField {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: var(--grey);
+    text-align: left;
+}
+
+.inputField input {
+    color: black;
+    padding: 10px;
+    margin-top: 6px;
+}
+
+form button {
+    align-self: center;
+}
+
+form .errorMessage {
+    color: var(--red);
+    padding: 0;
+    margin: 0;
+}
