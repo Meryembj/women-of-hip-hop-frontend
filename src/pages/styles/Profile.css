@@ -1,14 +1,9 @@
-#profileBody {
-    background-color: var(--cream2);
-    min-height: 100vh;
-}
-
 .accountSettings {
     margin-top: 50px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .accountActions {

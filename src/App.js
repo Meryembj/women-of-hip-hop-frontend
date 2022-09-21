@@ -1,5 +1,6 @@
 import "./App.css";
 import shuffleImage from './pages/styles/shuffle.png';
+import loadingGIF from './components/styles/loadingGIF.gif';
 import { Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 
