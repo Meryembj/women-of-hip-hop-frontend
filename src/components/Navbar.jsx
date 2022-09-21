@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar(props) {
   const { logOutUser, user } = useContext(AuthContext);
+  if (!user) return <div>Loading...</div>
   return (
     <div className='Navbar'>
       <Link to="/"><h1 className='navHome'>WOHH</h1></Link>

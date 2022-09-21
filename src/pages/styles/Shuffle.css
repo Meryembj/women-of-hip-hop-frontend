@@ -1,0 +1,99 @@
+#shuffleMain {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.userActionsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.randomArtist {
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cream2);
+    border-radius: 25px;
+    padding: 30px;
+}
+
+.randomArtist .info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.randomArtist .info img {
+    height: 15em;
+    width: 15em;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2em;
+}
+
+.randomArtist .info p {
+    font-size: 18px;
+    padding: 0 40px 0 20px;
+    text-align: justify;
+}
+
+.randomArtist .flagsong {
+}
+
+#shuffle {
+    margin-top: 5em;
+    width: 8em;
+    height: 8em;
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    z-index: 0;
+}
+
+#shuffle:hover:before {
+    content: "";
+    background: linear-gradient(111.3deg, var(--yellow) 9.6%, var(--red) 93.6%);
+    /* background: linear-gradient(45deg, var(--red), #E1784E, var(--yellow), #D9E4A2, #B3FFFC, #645DD7, #B060E7, #FB62F6, var(--red)); */
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button 2s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 50%;
+}
+
+#shuffle:hover:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--yellow);
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+}
+
+@keyframes glowing-button {
+    0% { background-position: 0 0; }
+    50% { background-position: 100% 0; }
+    100% { background-position: 0 0; }
+}

@@ -31,7 +31,6 @@ export const CreateAlbum = () => {
 
   return (
     <div>
-          <Navbar />
       <h1>Create a new album</h1>
       <form onSubmit={handleSubmit} class="form-group">
         <label>Album Name:</label>

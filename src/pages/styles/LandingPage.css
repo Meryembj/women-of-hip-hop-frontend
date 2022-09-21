@@ -1,5 +1,5 @@
 /* STYLE */
-.LandingPage {
+#LandingPage {
     height: 100vh;
     background-color: var(--grey);
     display: flex;
@@ -8,11 +8,11 @@
     align-items: center;
 }
 
-.LandingPage .title {
+#LandingPage .title {
     padding: 2em 0;
 }
 
-.LandingPage .title h1 {
+#LandingPage .title h1 {
     color: var(--yellow);
     font-family: 'Raleway', sans-serif;
     font-size: 7em;
@@ -22,7 +22,7 @@
     text-align: center;
 }
 
-.LandingPage .title .outlined {
+#LandingPage .title .outlined {
     color: var(--grey);
     text-shadow: -1.5px -1.5px 0 var(--yellow),
 		 1.5px -1.5px 0 var(--yellow),
@@ -30,28 +30,28 @@
 		 1.5px 1.5px 0 var(--yellow);
 }
 
-.options, form {
+#LandingPage .options, form {
     background-color: var(--white);
     padding: 2em;
     border-radius: 25px;
     text-align: center;
 }
 
-.options h2, form h2 {
+#LandingPage .options h2, form h2 {
     color: black;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 1.6em;
 }
 
-.options .buttons {
+#LandingPage .options .buttons {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin: 3em 0 0 0;
 }
 
-.options button, form button {
+#LandingPage .options button, form button {
     color: var(--grey);
     background-color: var(--cream);
     border: 2px solid var(--cream);
@@ -67,13 +67,13 @@
     width: fit-content;
 }
 
-.options button:hover, form button:hover {
+#LandingPage .options button:hover, form button:hover {
     color: var(--cream);
     background-color: var(--grey);
-    border: 2px solid var(--cream);
+    border: 2px solid var(--grey);
 }
 
-form {
+#LandingPage form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -105,7 +105,7 @@ form {
     margin-top: 6px;
 }
 
-form button {
+#LandingPage form button {
     align-self: center;
 }
 

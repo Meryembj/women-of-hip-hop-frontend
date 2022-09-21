@@ -24,13 +24,13 @@ function ChangePictureForm(props) {
   };
 
   return (
-    <form id="ChangePicture" className="actionForm">
+    <form id="changePicture" className="actionForm">
       <label>New picture's URL</label>
       <input type='url' name='newPicture' value={newPicture}
              onChange={event => setNewPicture(event.target.value)}/>
       <label>Preview:</label>
       <img alt="preview" src={newPicture === '' ? 'https://i.imgflip.com/3es772.png' : newPicture}/>
-      {newPicture === '' && <h3 className='previewText'>Waiting for your input...</h3>}
+      {newPicture === '' && <p className='previewText'>Waiting for your input...</p>}
       <button type="submit" onClick={event => handleSubmit(event)}>Submit</button>
     </form>
   );
