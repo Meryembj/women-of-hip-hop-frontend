@@ -1,9 +1,10 @@
 #shuffleMain {
-    margin-top: 5vh;
+    padding-top: 5vh;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
+    background-color: var(--white);
 }
 
 .userActionsContainer {
@@ -44,9 +45,6 @@
     font-size: 18px;
     padding: 0 40px 0 20px;
     text-align: justify;
-}
-
-.randomArtist .flagsong {
 }
 
 #shuffle {

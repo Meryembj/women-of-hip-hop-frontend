@@ -1,0 +1,29 @@
+#notFound {
+    background-color: var(--cream2);
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+#notFound .message {
+    margin-top: 3rem;
+}
+
+#notFound .message h1 {
+    font-size: 5em;
+    font-weight: 900;
+    line-height: 0.8em;
+    text-align: center;
+    color: var(--white);
+    text-shadow: -1.5px -1.5px 0 var(--red),
+		 1.5px -1.5px 0 var(--red),
+		 -1.5px 1.5px 0 var(--red),
+		 1.5px 1.5px 0 var(--red);
+}
+
+#notFound img {
+    width: 40rem;
+}

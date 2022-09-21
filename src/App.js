@@ -22,6 +22,7 @@ import MyAlbums from "./pages/MyAlbumPage";
 import MyArtists from "./pages/MyArtistsPage";
 import ShufflePage from "./pages/ShufflePage";
 import AlbumDetailsPage from "./pages/AlbumDetails";
+import NotFound from "./pages/NotFoundPage";
 
 
 function App() {
@@ -41,7 +42,8 @@ function App() {
           <Route path="/myArtists" element={<MyArtists />} />
           <Route path="/createArtist" element={<NewArtist />} />
           <Route path="/shuffle" element={<ShufflePage shuffleImg={shuffleImage}/>} />
-         <Route path="/albums/:id" element={<AlbumDetailsPage />} />
+          <Route path="/albums/:id" element={<AlbumDetailsPage />} />
+          <Route path="*" element={ <NotFound /> } />
         </Route>
       </Routes>
     </div>
