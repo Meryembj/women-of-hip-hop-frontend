@@ -20,6 +20,7 @@ import Layout from "./pages/LayoutPage";
 import Home from "./pages/HomePage";
 import Profile from "./pages/ProfilePage";
 import { BsNewspaper } from "react-icons/bs";
+import AlbumDetailsPage from "./pages/AlbumDetails";
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -36,6 +37,7 @@ function App() {
         <Route path="/createAlbum" element={<NewAlbum />} />
         <Route path="/myArtists" element={<MyArtists />} />
         <Route path="/createArtist" element={<NewArtist />} />
+        <Route path="/albums/:id" element={<AlbumDetailsPage />} />
       </Routes>
     </div>
   );

@@ -1,4 +1,6 @@
 import React from "react";
+import { FcLike } from "react-icons/fc";
+
 
 const Artist = ({ name, picture, miniBio, flagSong, type }) => {
   return (
@@ -11,7 +13,8 @@ const Artist = ({ name, picture, miniBio, flagSong, type }) => {
               <h5 className="card-title">{name}</h5>
               <p className="card-text">{miniBio}</p>
               <p className="card-text">{flagSong}</p>
-              {type === "all" && (
+              <FcLike></FcLike>
+             {/*  {type === "all" && (
                 <a href="#" className="btn btn-info">
                   Add to favorite
                 </a>
@@ -20,7 +23,7 @@ const Artist = ({ name, picture, miniBio, flagSong, type }) => {
                 <a href="#" className="btn btn-info">
                   Add to favorite
                 </a>
-              )}
+              )} */}
             </div>
           </div>
         </div>

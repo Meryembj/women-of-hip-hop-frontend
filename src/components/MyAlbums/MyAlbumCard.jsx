@@ -46,24 +46,24 @@ const MyAlbumCard = ({ name, picture, artist, album }) => {
   }, []); */
 
   return (
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="card" style={{ width: "18rem" }}>
-            <h5 class="card-title">{artist.name}</h5>
-            <div class="card-deck">
-              <img class="card-img-top" src={picture} alt="Card cap"></img>
-              <div class="card-header">{name}</div>
-              <div class="card-body">
-                <a href="#" class="btn btn-success">
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <div className="card" style={{ width: "18rem" }}>
+            <h5 className="card-title">{artist.name}</h5>
+            <div className="card-deck">
+              <img className="card-img-top" src={picture} alt="Card cap"></img>
+              <div className="card-header">{name}</div>
+              <div className="card-body">
+                <button href="#" className="btn btn-success">
                   Add to favorite
-                </a>
-                <a href="#" class="btn btn-primary">
+                </button>
+                <button className="btn btn-primary">
                   Details
-                </a>
+                </button>
                 <button
                   href="#"
-                  class="btn btn-danger"
+                  className="btn btn-danger"
                   onClick={(event) => handleSubmit(event)}
                 >
                   Delete
