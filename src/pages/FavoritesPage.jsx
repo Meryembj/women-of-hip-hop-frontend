@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Favorite from "../components/Favorites/Favorite";
-import Navbar from "../components/Navbar";
+import Artist from "../components/AllArtists/ArtistCard";
+
+const API_URL = "https://women-of-hip-hop.herokuapp.com/favorites";
 
 function Favorites() {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://women-of-hip-hop.herokuapp.com/favorites", {
+      .get(`${API_URL}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },
@@ -22,13 +24,17 @@ function Favorites() {
   return (
     <div>
       <h3>List of favorites</h3>
-      <ul>
+      <ul style={{ listStyle: "none" }}>
         {favorites.map((favorite) => {
-          console.log("Hello", favorite);
-
           return (
-            <li>
-              <Favorite userId={favorite.userID} />
+            <li key={favorite._id}>
+              <Artist
+                name={favorite.artist_id.name}
+                picture={favorite.artist_id.picture}
+                miniBio={favorite.artist_id.miniBio}
+                flagSong={favorite.artist_id.flagSong}
+              />
+              {/* <Artist /> */}
             </li>
           );
         })}

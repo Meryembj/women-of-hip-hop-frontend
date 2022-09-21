@@ -1,7 +1,7 @@
 import "./Albums.css";
 import React from "react";
-import { FcLike } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import Favorite from "../Favorites/Favorite";
 
 const Album = ({ name, picture, artist, album }) => {
   return (
@@ -17,7 +17,7 @@ const Album = ({ name, picture, artist, album }) => {
                 <Link to={`/albums/${album._id}`} key={album._id}>
                   <button className="btn btn-primary">Details</button>
                 </Link>
-                <FcLike></FcLike>
+                <Favorite></Favorite>
               </div>
             </div>
           </div>

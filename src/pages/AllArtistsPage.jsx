@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Artist from "../components/AllArtists/ArtistCard";
+import Favorite from "../components/Favorites/Favorite";
 //import Navbar from "../components/Navbar";
-
 
 function Artists() {
   const [artists, setArtists] = useState([]);
@@ -15,7 +15,6 @@ function Artists() {
         },
       })
       .then((response) => {
-        console.log("response.data", response.data);
         setArtists(response.data.artists);
       });
   }, []);
@@ -34,6 +33,7 @@ function Artists() {
                   miniBio={artist.miniBio}
                   flagSong={artist.flagSong}
                 />
+                <Favorite artistId={artist._id} />
               </div>
             );
           })}

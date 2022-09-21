@@ -27,23 +27,6 @@ const MyAlbumCard = ({ name, picture, artist, album }) => {
         setErrorMessage(errorDescription);
       });
   };
-  /*   useEffect(() => {
-    fetchData();
-}, [data]); */
-  /* 
-  useEffect((id) => {
-    axios
-      .delete("https://women-of-hip-hop.herokuapp.com/artists/myArtists" + id, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-        },
-      })
-      .then((response) => {
-        navigate("/myAlbums");
-        setStatus(response.data);
-      })
-      .catch((err) => console.log(err));
-  }, []); */
 
   return (
     <div className="container">
@@ -58,9 +41,7 @@ const MyAlbumCard = ({ name, picture, artist, album }) => {
                 <button href="#" className="btn btn-success">
                   Add to favorite
                 </button>
-                <button className="btn btn-primary">
-                  Details
-                </button>
+                <button className="btn btn-primary">Details</button>
                 <button
                   href="#"
                   className="btn btn-danger"
