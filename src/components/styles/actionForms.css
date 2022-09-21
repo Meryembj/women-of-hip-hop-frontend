@@ -1,0 +1,51 @@
+.actionForm {
+    width: 40vw;
+    min-height: 25vh;
+    text-align: left;
+    background-color: var(--cream);
+    margin: -10px 0 30px;
+    position: relative;
+}
+
+.actionForm :not(:last-child) { margin-bottom: 10px; }
+
+.actionForm label { font-weight: 600; }
+
+.actionForm input { width: 36vw; }
+
+.actionForm .message {
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.actionForm button {
+    color: var(--white);
+    background-color: var(--red);
+    border: 2px solid var(--red);
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+}
+
+.actionForm button:hover {
+    color: var(--red);
+    background-color: var(--white);
+    border: 2px solid var(--red);    
+}
+
+#changePicture img {
+    height: 100px;
+    display: block;
+}
+
+#changePicture .previewText {
+    display: inline;
+}
+
+#deleteAccount { text-align: center; }
+
+#deleteAccount button {
+    position: relative;
+    right: 0;
+    bottom: -10px;
+}

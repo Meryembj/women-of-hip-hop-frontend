@@ -11,14 +11,15 @@ import { Link } from 'react-router-dom';
 function Navbar(props) {
   const { logOutUser, user } = useContext(AuthContext);
   return (
-    <div className='Navbar'>
+    <div id='Navbar'>
       <Link to="/"><h1 className='navHome'>WOHH</h1></Link>
       <div className='userOptions'>
         <Link to="/profile">
-    <button>Profile <img alt="profile" src={user.picture}/></button>
-          
+          <button>Profile <img alt="profile" src={user.picture}/></button>
         </Link>
-        <button onClick={logOutUser}>Log out <BsArrowBarRight /></button>
+        <button id='nav-log-out' onClick={logOutUser}>
+          Log out <BsArrowBarRight />
+        </button>
       </div>
     </div>
   );

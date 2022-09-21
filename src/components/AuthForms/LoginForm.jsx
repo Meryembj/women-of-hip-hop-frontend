@@ -19,33 +19,31 @@ function LoginForm({ form, setForm }) {
         authenticateUser();
         navigate('/'); 
       })
-      .catch((error) => {
+      .catch(error => {
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
       });
   };
 
   return (
-    <>
-      <form id='login'>
-        <h2>{form.type === 'login' ? 'Welcome back!'
-             : 'Registration successful. Log in now:'}</h2>
-        { errorMessage && <p className="errorMessage">{errorMessage}</p> }
-        <div className="inputField">
-          <label>Username</label>
-          <input type="text" name="username" value={form.username}
-                 onChange={event => setForm({...form, username: event.target.value})} />
-        </div>
-        <div className="inputField">
-          <label>Password</label>
-          <input type="password" name="password" value={form.password}
-                 onChange={event => setForm({...form, password: event.target.value})} />
-        </div>
-        <button type="submit" className="form-btn"
-                  onClick={event => handleSubmit(event, form, setForm, 'login')}>
-            Log in</button>
-      </form>
-    </>
+    <form id='login'>
+      <h2>{form.type === 'login' ? 'Welcome back!'
+           : 'Registration successful. Log in now:'}</h2>
+      { errorMessage && <p className="errorMessage">{errorMessage}</p> }
+      <div className="inputField">
+        <label>Username</label>
+        <input type="text" name="username" value={form.username}
+               onChange={event => setForm({...form, username: event.target.value})} />
+      </div>
+      <div className="inputField">
+        <label>Password</label>
+        <input type="password" name="password" value={form.password}
+               onChange={event => setForm({...form, password: event.target.value})} />
+      </div>
+      <button type="submit" className="form-btn"
+              onClick={event => handleSubmit(event, form, setForm, 'login')}>
+        Log in</button>
+    </form>
   );
 };
 

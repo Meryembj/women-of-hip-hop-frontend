@@ -52,8 +52,8 @@
 
 #LandingPage .options button, form button {
     color: var(--grey);
-    background-color: var(--cream);
-    border: 2px solid var(--cream);
+    background-color: var(--yellow);
+    border: 2px solid var(--yellow);
     border-radius: 8px;
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
@@ -67,7 +67,7 @@
 }
 
 #LandingPage .options button:hover, form button:hover {
-    color: var(--cream);
+    color: var(--yellow);
     background-color: var(--grey);
     border: 2px solid var(--grey);
 }
@@ -106,10 +106,4 @@
 
 #LandingPage form button {
     align-self: center;
-}
-
-form .errorMessage {
-    color: var(--red);
-    padding: 0;
-    margin: 0;
 }

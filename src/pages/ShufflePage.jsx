@@ -12,7 +12,7 @@ import { TbArrowsShuffle } from 'react-icons/tb';
 const API_URL = 'https://women-of-hip-hop.herokuapp.com/artists/shuffle';
 
 
-function ShufflePage(props) {
+function Shuffle(props) {
   const [ artist, setArtist ] = useState();
   
   const getRandomArtist = () => {
@@ -61,4 +61,4 @@ function ShufflePage(props) {
   );
 }
 
-export default ShufflePage;
+export default Shuffle;
