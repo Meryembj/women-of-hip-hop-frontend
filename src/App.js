@@ -1,6 +1,5 @@
 import "./App.css";
 import shuffleImage from './pages/styles/shuffle.png';
-import loadingGIF from './components/styles/loadingGIF.gif';
 import { Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 
@@ -32,8 +31,8 @@ function App() {
     <div className="App">
       <Routes>
         {!isLoggedIn && <Route path="/" element={<LandingPage />} />}
-        {isLoggedIn && <Route path="/" element={<Home />} />}
         <Route path='/' element={<ProtectedRoute />}>
+          {isLoggedIn && <Route path="/" element={<Home />} />}
           <Route path="/albums" element={<Albums />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/artists" element={<Artists />} />

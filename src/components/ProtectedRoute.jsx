@@ -11,7 +11,7 @@ function ProtectedRoute({ loadingGIF }) {
   const { isLoggedIn, isLoading } = useContext(AuthContext);
 
   if (isLoading)
-    return ( <div id="loading"><img alt="loading" src={loadingGIF}/></div> );
+    return ( <div id="loading" className="page">Loading...</div> );
   if (!isLoggedIn)
     return (<Navigate to="/" />);
   return (

@@ -40,5 +40,9 @@ code {
     background: linear-gradient(111.3deg, var(--yellow) 9.6%, var(--red) 93.6%);
 }
 
+#loading {
+    width: 100vw;
+}
+
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,800;1,500;1,900&display=swap');

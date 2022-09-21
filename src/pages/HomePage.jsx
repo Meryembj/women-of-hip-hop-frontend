@@ -17,32 +17,29 @@ import PageCard from '../components/PageCard.jsx';
 function Home(props) {
   const { user } = useContext(AuthContext);
   return (
-    <>
-      <Navbar />
-      <div className="homeBody">
-        <p className="intro">Use our database of female Hip-Hop artists to discover new artists, listen to and save your favorite ones, and promote their relevance on the scene.<br/>
-          <span className='cool'>For a mature audience !</span></p>
-        <div className="cardsContainer">
-          <PageCard pageName='Shuffle' path='shuffle'
-                    pageDescription='Discover an artist at random!'
-                    pageThumbnail={shuffleImg} />
-          <PageCard pageName='Your Favorites' path='favorites'
-                    pageDescription='See and edit your favorite artists.'
-                    pageThumbnail={heartImg}/>
-          <PageCard pageName='All Artists' path='artists'
-                    pageDescription='Get a list of all the artists on our database.'
-                    pageThumbnail={artistImg} />
-        </div>
-        <div className="cardsContainer">
-          <PageCard pageName='All Albums' path='albums'
-                    pageDescription='Get a list of all the artists on our database.'
-                    pageThumbnail={albumImg}/>
-          <PageCard pageName='Profile' path='profile'
-                    pageDescription='See and edit your collections and manage your account.'
-                    pageThumbnail={user.picture} />
-        </div>
+    <div className="homeBody">
+      <p className="intro">Use our database of female Hip-Hop artists to discover new artists, listen to and save your favorite ones, and promote their relevance on the scene.<br/>
+        <span className='cool'>For a mature audience !</span></p>
+      <div className="cardsContainer">
+        <PageCard pageName='Shuffle' path='shuffle'
+                  pageDescription='Discover an artist at random!'
+                  pageThumbnail={shuffleImg} />
+        <PageCard pageName='Your Favorites' path='favorites'
+                  pageDescription='See and edit your favorite artists.'
+                  pageThumbnail={heartImg}/>
+        <PageCard pageName='All Artists' path='artists'
+                  pageDescription='Get a list of all the artists on our database.'
+                  pageThumbnail={artistImg} />
       </div>
-    </>
+      <div className="cardsContainer">
+        <PageCard pageName='All Albums' path='albums'
+                  pageDescription='Get a list of all the artists on our database.'
+                  pageThumbnail={albumImg}/>
+        <PageCard pageName='Profile' path='profile'
+                  pageDescription='See and edit your collections and manage your account.'
+                  pageThumbnail={user.picture} />
+      </div>
+    </div>
   );
 }
 
