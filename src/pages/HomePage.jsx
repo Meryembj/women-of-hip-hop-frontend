@@ -1,10 +1,10 @@
 import '../components/styles/PageCard.css';
 import './styles/Home.css';
 import { useContext } from 'react';
-import shuffleImg from './styles/shuffle.png';
-import heartImg from './styles/heart.png';
-import artistImg from './styles/artist.png';
-import albumImg from './styles/album.png';
+import shuffleImg from './styles/images/shuffle.png';
+import heartImg from './styles/images/heart.png';
+import artistImg from './styles/images/artist.png';
+import albumImg from './styles/images/album.png';
 
 // CONTEXT
 import { AuthContext } from '../context/auth.context';

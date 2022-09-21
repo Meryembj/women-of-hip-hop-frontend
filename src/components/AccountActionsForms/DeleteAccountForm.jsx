@@ -1,10 +1,11 @@
+import '../styles/actionForms.css';
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import { AuthContext } from '../../context/auth.context';
 
-const API_URL = 'https://women-of-hip-hop.herokuapp.com/auth/';
+const API_URL = 'https://women-of-hip-hop.herokuapp.com/auth';
 
 
 
@@ -15,7 +16,7 @@ function DeleteAccountForm(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.delete(`${API_URL}${user._id}`, {
+    axios.delete(`${API_URL}/${user._id}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` }
     })
       .then(response => {

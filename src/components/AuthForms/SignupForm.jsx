@@ -20,31 +20,29 @@ function SignupForm({ form, setForm }) {
   };
 
   return (
-      <>
-        <form id='signup'>
-          <h2>{'Create an account.'}</h2>
-        { errorMessage && <p className="errorMessage">{errorMessage}</p> }
-          <div className="inputField">
-            <label>Username</label>
-            <input type="text" name="username" value={form.username}
-                   onChange={event => setForm({...form, username: event.target.value})} />
-          </div>
-          <div className="inputField">
-            <label>Password</label>
-            <input type="password" name="password" value={form.password}
-                   onChange={event => setForm({...form, password: event.target.value})} />
-          </div>
-          <div className="inputField">
-            
-            <label>Picture (as a url)</label>
-            <input type="url" name="picture" value={form.picture}
-                   onChange={event => setForm({...form, picture: event.target.value})} />
-          </div>
-          <button type="submit" className="form-btn"
-                  onClick={event => handleSubmit(event, form, setForm, 'signup')}>
-            Sign me UP!</button>
-        </form>
-      </>
+    <form id='signup'>
+      <h2>{'Create an account.'}</h2>
+      { errorMessage && <p className="errorMessage">{errorMessage}</p> }
+      <div className="inputField">
+        <label>Username</label>
+        <input type="text" name="username" value={form.username}
+               onChange={event => setForm({...form, username: event.target.value})} />
+      </div>
+      <div className="inputField">
+        <label>Password</label>
+        <input type="password" name="password" value={form.password}
+               onChange={event => setForm({...form, password: event.target.value})} />
+      </div>
+      <div className="inputField">
+        
+        <label>Picture (as a url)</label>
+        <input type="url" name="picture" value={form.picture}
+               onChange={event => setForm({...form, picture: event.target.value})} />
+      </div>
+      <button type="submit" className="form-btn"
+              onClick={event => handleSubmit(event, form, setForm, 'signup')}>
+        Sign me UP!</button>
+    </form>
   );
 }
 

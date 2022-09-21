@@ -1,5 +1,5 @@
 import "./App.css";
-import shuffleImage from "./pages/styles/shuffle.png";
+import shuffleImage from "./pages/styles/images/shuffle.png";
 import { Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 
@@ -20,7 +20,7 @@ import NewAlbum from "./pages/CreateAlbumPage";
 import NewArtist from "./pages/CreateArtistPage";
 import MyAlbums from "./pages/MyAlbumPage";
 import MyArtists from "./pages/MyArtistsPage";
-import ShufflePage from "./pages/ShufflePage";
+import Shuffle from "./pages/ShufflePage";
 import AlbumDetailsPage from "./pages/AlbumDetails";
 import NotFound from "./pages/NotFoundPage";
 
@@ -41,10 +41,7 @@ function App() {
           <Route path="/createAlbum" element={<NewAlbum />} />
           <Route path="/myArtists" element={<MyArtists />} />
           <Route path="/createArtist" element={<NewArtist />} />
-
-          <Route path="/albums/:id" element={<AlbumDetailsPage />} />
-
-          <Route path="/shuffle" element={<ShufflePage shuffleImg={shuffleImage}/>} />
+          <Route path="/shuffle" element={<Shuffle shuffleImg={shuffleImage}/>} />
           <Route path="/albums/:id" element={<AlbumDetailsPage />} />
           <Route path="*" element={ <NotFound /> } />
         </Route>

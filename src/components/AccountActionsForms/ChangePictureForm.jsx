@@ -1,7 +1,7 @@
-import './actionForms.css';
-import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import '../styles/actionForms.css';
 import { useState, useContext } from 'react';
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 import { AuthContext } from '../../context/auth.context';
 
