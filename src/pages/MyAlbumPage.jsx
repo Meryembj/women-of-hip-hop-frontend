@@ -20,7 +20,6 @@ function MyAlbums() {
   }, []);
   return (
     <>
-      <Navbar />
       <div>
         <h3>All the albums you created</h3>
         <ul>
@@ -32,6 +31,7 @@ function MyAlbums() {
                   picture={album.picture}
                   songs={album.songs}
                   artist={album.artist.name}
+                  album={album}
                 />
               </div>
             );

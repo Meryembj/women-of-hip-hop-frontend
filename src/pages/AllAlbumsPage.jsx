@@ -18,9 +18,9 @@ function Albums() {
         setAlbums(response.data);
       });
   }, []);
+
   return (
     <>
-      <Navbar />
       <div>
         <h3>List of albums</h3>
         <div>
@@ -31,6 +31,7 @@ function Albums() {
                   name={album.name}
                   picture={album.picture}
                   artist={album.artist}
+                  album={album}
                 />
               </div>
             );

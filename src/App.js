@@ -21,6 +21,8 @@ import NewArtist from "./pages/CreateArtistPage";
 import MyAlbums from "./pages/MyAlbumPage";
 import MyArtists from "./pages/MyArtistsPage";
 import ShufflePage from "./pages/ShufflePage";
+import AlbumDetailsPage from "./pages/AlbumDetails";
+
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -39,6 +41,7 @@ function App() {
           <Route path="/myArtists" element={<MyArtists />} />
           <Route path="/createArtist" element={<NewArtist />} />
           <Route path="/shuffle" element={<ShufflePage shuffleImg={shuffleImage}/>} />
+         <Route path="/albums/:id" element={<AlbumDetailsPage />} />
         </Route>
       </Routes>
     </div>

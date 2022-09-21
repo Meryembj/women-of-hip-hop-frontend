@@ -1,16 +1,11 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { BsArrowBarLeft } from "react-icons/bs";
-
 import axios from "axios";
 import Artist from "../components/AllArtists/ArtistCard";
-import Navbar from "../components/Navbar";
+//import Navbar from "../components/Navbar";
+
 
 function Artists() {
   const [artists, setArtists] = useState([]);
-
-  const navigate = useNavigate();
-
 
   useEffect(() => {
     axios
@@ -27,9 +22,7 @@ function Artists() {
 
   return (
     <>
-      <Navbar />
       <div>
-        <BsArrowBarLeft onClick={() => navigate(-1)}></BsArrowBarLeft>
         <h3>List of Artists</h3>
         <div>
           {artists.map((artist) => {
