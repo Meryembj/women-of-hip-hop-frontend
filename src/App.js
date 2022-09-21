@@ -1,5 +1,5 @@
 import "./App.css";
-import shuffleImage from './pages/styles/shuffle.png';
+import shuffleImage from "./pages/styles/shuffle.png";
 import { Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 
@@ -23,7 +23,6 @@ import MyArtists from "./pages/MyArtistsPage";
 import ShufflePage from "./pages/ShufflePage";
 import AlbumDetailsPage from "./pages/AlbumDetails";
 
-
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
   return (
@@ -31,7 +30,7 @@ function App() {
       <Routes>
         {!isLoggedIn && <Route path="/" element={<LandingPage />} />}
         {isLoggedIn && <Route path="/" element={<Home />} />}
-        <Route path='/' element={<ProtectedRoute />}>
+        <Route path="/" element={<ProtectedRoute />}>
           <Route path="/albums" element={<Albums />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/artists" element={<Artists />} />
@@ -40,8 +39,11 @@ function App() {
           <Route path="/createAlbum" element={<NewAlbum />} />
           <Route path="/myArtists" element={<MyArtists />} />
           <Route path="/createArtist" element={<NewArtist />} />
-          <Route path="/shuffle" element={<ShufflePage shuffleImg={shuffleImage}/>} />
-         <Route path="/albums/:id" element={<AlbumDetailsPage />} />
+          <Route
+            path="/shuffle"
+            element={<ShufflePage shuffleImg={shuffleImage} />}
+          />
+          <Route path="/albums/:id" element={<AlbumDetailsPage />} />
         </Route>
       </Routes>
     </div>
