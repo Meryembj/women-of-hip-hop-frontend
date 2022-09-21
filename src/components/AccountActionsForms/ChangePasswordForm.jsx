@@ -10,6 +10,7 @@ const API_URL = 'https://women-of-hip-hop.herokuapp.com/auth/change-password';
 function ChangePasswordForm(props) {
   const { user, authenticateUser } = useContext(AuthContext);
   const [ newPassword, setNewPassword ] = useState("");
+  const [ message, setMessage ] = useState({text: undefined, type: 'error'});
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -17,14 +18,21 @@ function ChangePasswordForm(props) {
     axios.patch(`${API_URL}`, { password: newPassword }, {
       headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` }})
       .then(response => {
-        console.log(response);
         authenticateUser();
-        navigate('/profile');         
+        setMessage({text: 'Password successfully modified.', type: 'success'});
+      })
+      .catch(error => {
+        const errorDescription = error.response.data.message;
+        setMessage({text: errorDescription, type: 'error'});
       });
   };
 
   return (
     <form id="changePassword" className="actionForm">
+      { message.text &&
+        <p className={message.type === 'error' ? 'errorMessage' : 'message'}>
+          {message.text}
+        </p> }
       <label>New password</label>
       <input type="text" name="newPassword" value={newPassword}
              onChange={event => setNewPassword(event.target.value)} />

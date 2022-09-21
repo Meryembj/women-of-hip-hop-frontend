@@ -25,10 +25,10 @@ function Profile(props) {
                   pageDescription="See and edit your favorite artists."
                   pageThumbnail={heartImg} />
         <PageCard pageName="Your albums" path="/myAlbums"
-                  pageDescription="See and manage the albums you've imported."
+                  pageDescription="See, add, and manage the albums you've imported."
                   pageThumbnail={albumImg} />
         <PageCard pageName="Your artists" path="/myArtists"
-                  pageDescription="See and manage the artists you've imported."
+                  pageDescription="See, add, and manage the artists you've imported."
                   pageThumbnail={artistImg} />
       </div>
       <div className="accountSettings">

@@ -30,8 +30,10 @@ function DeleteAccountForm(props) {
   };
   return (
     <form id="deleteAccount" className="actionForm">
+      { errorMessage && <p className="errorMessage">{errorMessage}</p> }
       <h3><b>ATTENTION:</b> this action will delete your account permanently and log you out.</h3>
-      <button onClick={event => handleSubmit(event)}>Delete my account</button>
+      <button onClick={event => handleSubmit(event)}>
+        Delete my account</button>
     </form>
   );
 }

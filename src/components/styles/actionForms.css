@@ -1,23 +1,30 @@
 .actionForm {
     width: 40vw;
+    min-height: 25vh;
     text-align: left;
     background-color: var(--cream);
-    margin-bottom: 30px;
+    margin: -10px 0 30px;
+    position: relative;
 }
 
-.actionForm label {
+.actionForm :not(:last-child) { margin-bottom: 10px; }
+
+.actionForm label { font-weight: 600; }
+
+.actionForm input { width: 36vw; }
+
+.actionForm .message {
+    color: var(--blue);
     font-weight: 600;
 }
 
-.actionForm input {
-    width: 36vw;
-}
-
 .actionForm button {
-    position: relative;
     color: var(--white);
     background-color: var(--red);
     border: 2px solid var(--red);
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
 }
 
 .actionForm button:hover {
@@ -31,19 +38,14 @@
     display: block;
 }
 
-#deleteAccount {
-    text-align: center;
+#changePicture .previewText {
+    display: inline;
 }
+
+#deleteAccount { text-align: center; }
 
 #deleteAccount button {
-    color: var(--white);
-    background-color: var(--red);
-    border: 2px solid var(--red);
-    margin-top: 30px;
-}
-
-#deleteAccount button:hover {
-    color: var(--red);
-    background-color: var(--white);
-    border: 2px solid var(--red);
+    position: relative;
+    right: 0;
+    bottom: -10px;
 }

@@ -6,6 +6,8 @@
     --cream2: #F1EAE4;
     --red: #C22755;
     --white: #F7F9F9;
+    --purple: #B060E7;
+    --blue: #645DD7;
     font-size: 16px;
 }
 
@@ -42,6 +44,13 @@ code {
 
 #loading {
     width: 100vw;
+}
+
+form .errorMessage {
+    color: var(--red);
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
 }
 
 /* FONTS */

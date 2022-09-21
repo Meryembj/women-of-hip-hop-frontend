@@ -19,7 +19,7 @@ function LoginForm({ form, setForm }) {
         authenticateUser();
         navigate('/'); 
       })
-      .catch((error) => {
+      .catch(error => {
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
       });

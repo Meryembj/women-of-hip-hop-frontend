@@ -13,7 +13,7 @@ function SignupForm({ form, setForm }) {
         console.log('response status', response.status);
         setForm({...form, type: 'login-post-signup'});
       })
-      .catch((error) => {
+      .catch(error => {
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
       });
