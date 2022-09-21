@@ -18,6 +18,7 @@ function Albums() {
         setAlbums(response.data);
       });
   }, []);
+
   return (
     <>
       <div>
@@ -30,6 +31,7 @@ function Albums() {
                   name={album.name}
                   picture={album.picture}
                   artist={album.artist}
+                  album={album}
                 />
               </div>
             );

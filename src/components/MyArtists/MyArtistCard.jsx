@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../Navbar";
+//import Navbar from "../Navbar";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FcLike, FcLikePlaceholder, FcFullTrash } from "react-icons/fc";
 
 const API_URL = "https://women-of-hip-hop.herokuapp.com/artists";
@@ -10,7 +10,6 @@ const MyArtistCard = ({ picture, name, miniBio, flagSong, artist }) => {
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const handleSubmit = (event) => {
-    console.log(artist);
     event.preventDefault();
     axios
       .delete(`${API_URL}/${artist._id}`, {
@@ -27,19 +26,19 @@ const MyArtistCard = ({ picture, name, miniBio, flagSong, artist }) => {
 
   return (
     <div>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="card" style={{ width: "18rem" }}>
-              <img class="card-img-top" src={picture} alt="profile"></img>
-              <div class="card-body">
-                <h5 class="card-title">{name}</h5>
-                <p class="card-text">{miniBio}</p>
-                <p class="card-text">{flagSong}</p>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className="card" style={{ width: "18rem" }}>
+              <img className="card-img-top" src={picture} alt="profile"></img>
+              <div className="card-body">
+                <h5 className="card-title">{name}</h5>
+                <p className="card-text">{miniBio}</p>
+                <p className="card-text">{flagSong}</p>
                 <FcLikePlaceholder>
                   <FcLike></FcLike>
                 </FcLikePlaceholder>
-                <button href="#" class="btn btn-primary">
+                <button href="#" className="btn btn-primary">
                   Details
                 </button>
                 <FcFullTrash href="#" onClick={(event) => handleSubmit(event)}>
