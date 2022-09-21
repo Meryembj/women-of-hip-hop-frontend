@@ -6,7 +6,14 @@ import { FcLike, FcLikePlaceholder, FcFullTrash } from "react-icons/fc";
 
 const API_URL = "https://women-of-hip-hop.herokuapp.com/artists";
 
-const MyArtistCard = ({ picture, name, miniBio, flagSong, artist }) => {
+const MyArtistCard = ({
+  picture,
+  name,
+  miniBio,
+  flagSong,
+  artist,
+  setRefresh,
+}) => {
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const handleSubmit = (event) => {
@@ -17,7 +24,9 @@ const MyArtistCard = ({ picture, name, miniBio, flagSong, artist }) => {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },
       })
-      .then((response) => {})
+      .then((response) => {
+        setRefresh(true);
+      })
       .catch((error) => {
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
@@ -38,9 +47,6 @@ const MyArtistCard = ({ picture, name, miniBio, flagSong, artist }) => {
                 <FcLikePlaceholder>
                   <FcLike></FcLike>
                 </FcLikePlaceholder>
-                <button href="#" className="btn btn-primary">
-                  Details
-                </button>
                 <FcFullTrash href="#" onClick={(event) => handleSubmit(event)}>
                   Delete
                 </FcFullTrash>

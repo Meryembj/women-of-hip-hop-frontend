@@ -1,12 +1,16 @@
 import React from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { useState } from "react";
+import UpdateAlbum from "./UpdateAlbum";
+import { FcFullTrash } from "react-icons/fc";
 
 const API_URL = "https://women-of-hip-hop.herokuapp.com/albums";
 
-const MyAlbumCard = ({ name, picture, artist, album }) => {
+const MyAlbumCard = ({ name, picture, artist, album, setRefresh }) => {
   const [errorMessage, setErrorMessage] = useState(undefined);
+
+  const [showForm, setShowForm] = useState(false);
 
   const navigate = useNavigate();
 
@@ -20,13 +24,14 @@ const MyAlbumCard = ({ name, picture, artist, album }) => {
         },
       })
       .then((response) => {
-        navigate("/");
+        setRefresh(true);
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
       });
   };
+
 
   return (
     <div className="container">
@@ -38,10 +43,12 @@ const MyAlbumCard = ({ name, picture, artist, album }) => {
               <img className="card-img-top" src={picture} alt="Card cap"></img>
               <div className="card-header">{name}</div>
               <div className="card-body">
-                <button href="#" className="btn btn-success">
-                  Add to favorite
+                <Link to={`/albums/${album._id}`} key={album._id}>
+                  <button className="btn btn-primary">Details</button>
+                </Link>
+                <button onClick={() => setShowForm(true)}>
+                  {showForm && <UpdateAlbum></UpdateAlbum>}
                 </button>
-                <button className="btn btn-primary">Details</button>
                 <button
                   href="#"
                   className="btn btn-danger"
