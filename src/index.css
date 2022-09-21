@@ -11,6 +11,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: var(--cream2);
 }
 
 code {
@@ -20,8 +21,6 @@ code {
 
 .cool {
     font-weight: 500;
-    text-decoration: underline;
-    text-underline-position: under;
     position: relative;
 }
 

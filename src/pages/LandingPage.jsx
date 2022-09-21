@@ -1,17 +1,13 @@
 import './styles/LandingPage.css';
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 
 // CONTEXT
-import { AuthContext } from "../context/auth.context";
 
 // COMPONENTS
-import Navbar from "../components/Navbar";
 import SignupForm from "../components/AuthForms/SignupForm";
 import LoginForm from "../components/AuthForms/LoginForm";
 
 function LandingPage(props) {
-  const { user } = useContext(AuthContext);
-
   const [form, setForm] = useState({
     type: "",
     username: "",
@@ -27,7 +23,7 @@ function LandingPage(props) {
   };
 
   return (
-    <div className="LandingPage">
+    <div id="LandingPage">
       <section className="firstGlance">
         <div className="title">
           <h1>WOMEN</h1>

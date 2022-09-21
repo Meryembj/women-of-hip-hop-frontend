@@ -9,6 +9,7 @@ const AuthContext = React.createContext();
 
 function AuthProviderWrapper(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
@@ -32,15 +33,18 @@ function AuthProviderWrapper(props) {
       axios.post(`${API_URL}/auth/verify`, {token: storedToken})
         .then((response) => {
           const user = response.data.user;
+          setIsLoading(false);
           setIsLoggedIn(true);
           setUser(user);
         })
         .catch((error) => {
+          setIsLoading(false);
           setIsLoggedIn(false);
           setUser(null);
         });
     }
     else {
+      setIsLoading(false);
       setIsLoggedIn(false);
       setUser(null);
     }
@@ -50,7 +54,7 @@ function AuthProviderWrapper(props) {
   useEffect(() => { authenticateUser(); }, []);
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, user, storeToken,
+    <AuthContext.Provider value={{ isLoggedIn, isLoading, user, storeToken,
                                    authenticateUser, logOutUser }}>
       {props.children}
     </AuthContext.Provider>

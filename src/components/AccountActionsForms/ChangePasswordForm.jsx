@@ -6,6 +6,7 @@ function ChangePasswordForm(props) {
       <label>New password</label>
       <input type="text" name="username" value=''
              onChange={() => {}} />
+      <button>Submit</button>
     </form>
   );
 }

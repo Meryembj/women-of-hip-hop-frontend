@@ -1,20 +1,37 @@
 .actionForm {
+    width: 40vw;
     text-align: left;
     background-color: var(--cream);
-    width: 40vw;
 }
 
-.actionForm img {
-    width: 100px;
-    display: inline;
+.actionForm label {
+    font-weight: 600;
 }
 
 .actionForm input {
     width: 36vw;
 }
 
-#changePicture .previewText {
-    display: inline;
+.actionForm button {
+    position: relative;
+    color: var(--white);
+    background-color: var(--red);
+    border: 2px solid var(--red);
+}
+
+.actionForm button:hover {
+    color: var(--red);
+    background-color: var(--white);
+    border: 2px solid var(--red);    
+}
+
+#changePicture img {
+    height: 100px;
+    display: block;
+}
+
+#deleteAccount {
+    text-align: center;
 }
 
 #deleteAccount button {

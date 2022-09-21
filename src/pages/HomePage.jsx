@@ -1,6 +1,10 @@
 import '../components/styles/PageCard.css';
 import './styles/Home.css';
-import { useContext } from 'react'; 
+import { useContext } from 'react';
+import shuffleImg from './styles/shuffle.png';
+import heartImg from './styles/heart.png';
+import artistImg from './styles/artist.png';
+import albumImg from './styles/album.png';
 
 // CONTEXT
 import { AuthContext } from '../context/auth.context';
@@ -21,18 +25,18 @@ function Home(props) {
         <div className="cardsContainer">
           <PageCard pageName='Shuffle' path='shuffle'
                     pageDescription='Discover an artist at random!'
-                    pageThumbnail='https://cdn-icons-png.flaticon.com/512/3580/3580329.png' />
+                    pageThumbnail={shuffleImg} />
           <PageCard pageName='Your Favorites' path='favorites'
                     pageDescription='See and edit your favorite artists.'
-                    pageThumbnail='https://nypost.com/wp-content/uploads/sites/2/2016/09/rihannafur.jpg?quality=75&strip=all'/>
+                    pageThumbnail={heartImg}/>
           <PageCard pageName='All Artists' path='artists'
                     pageDescription='Get a list of all the artists on our database.'
-                    pageThumbnail='https://pictures.squarespace-cdn.com/content/v1/5127db07e4b043d5dffeb39b/1450668190349-MU7PEG8705WPIYGXDD1W/picture-asset.jpeg' />
+                    pageThumbnail={artistImg} />
         </div>
         <div className="cardsContainer">
           <PageCard pageName='All Albums' path='albums'
                     pageDescription='Get a list of all the artists on our database.'
-                    pageThumbnail='https://e.snmc.io/i/600/w/438060b5ef8f47b62f4da00bef22acb9/8668847/meryl-quarantaine-Cover-Art.jpg'/>
+                    pageThumbnail={albumImg}/>
           <PageCard pageName='Profile' path='profile'
                     pageDescription='See and edit your collections and manage your account.'
                     pageThumbnail={user.picture} />

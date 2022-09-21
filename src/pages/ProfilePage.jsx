@@ -1,5 +1,8 @@
 import './styles/Profile.css';
 import { useState, useContext } from "react"; 
+import heartImg from './styles/heart.png';
+import artistImg from './styles/artist.png';
+import albumImg from './styles/album.png';
 
 // CONTEXT
 import { AuthContext } from "../context/auth.context";
@@ -16,43 +19,41 @@ function Profile(props) {
   const [ active, setActive ] = useState(0);
   
   return (
-    <>
-      <Navbar />
-      <div className="profileBody">
+    <div id="profileBody">
         <div className="cardsContainer">
           <PageCard pageName="Your Favorites" path="/favorites"
                     pageDescription="See and edit your favorite artists."
-                    pageThumbnail="https://nypost.com/wp-content/uploads/sites/2/2016/09/rihannafur.jpg?quality=75&strip=all"/>
+                    pageThumbnail={heartImg} />
           <PageCard pageName="Your albums" path="/myAlbums"
                     pageDescription="See and manage the albums you've imported."
-                    pageThumbnail="" />
+                    pageThumbnail={albumImg} />
           <PageCard pageName="Your artists" path="/myArtists"
                     pageDescription="See and manage the artists you've imported."
-                    pageThumbnail="" />
+                    pageThumbnail={artistImg} />
         </div>
         <div className="accountSettings">
-          <h1> <img className="you" alt="you" src={user.picture}/>
-            Account Settings</h1>
           <ul className="accountActions">
+            <h1><img id="you" alt="you" src={user.picture}/>Account Settings</h1>
             <li>
               <button className="action" onClick={() => setActive(active !== 1 ? 1 : 0)}>
                 Change your password</button>
-              {active === 1 && <ChangePasswordForm />}
             </li>
             <li>
               <button className="action" onClick={() => setActive(active !== 2 ? 2 : 0)}>
                 Change your profile picture</button>
-              {active === 2 && <ChangePictureForm />}
             </li>
             <li>
               <button className="action" onClick={() => setActive(active !== 3 ? 3 : 0)}>
                 Delete your account</button>
-              {active === 3 && <DeleteAccountForm />}
             </li>
           </ul>
+          <div className="forms">
+            {active === 1 && <ChangePasswordForm />}
+            {active === 2 && <ChangePictureForm />}
+            {active === 3 && <DeleteAccountForm />}
+          </div>
         </div>
-      </div>
-    </>
+    </div>
   );
 }
 
