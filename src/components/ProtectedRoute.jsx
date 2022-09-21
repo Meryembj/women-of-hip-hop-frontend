@@ -1,21 +1,24 @@
 import { useContext } from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
-import Navbar from './Navbar';
 
+// CONTEXT
 import {AuthContext} from '../context/auth.context';
 
-function ProtectedRoute(props) {
+// COMPONENTS
+import Navbar from './Navbar';
+
+function ProtectedRoute({ loadingGIF }) {
   const { isLoggedIn, isLoading } = useContext(AuthContext);
 
   if (isLoading)
-    return (<div>Loading</div>);
+    return ( <div id="loading" className="page">Loading...</div> );
   if (!isLoggedIn)
     return (<Navigate to="/" />);
   return (
-    <>
+    <div className="page">
       <Navbar />
       <Outlet />
-    </>
+    </div>
   );
 }
 

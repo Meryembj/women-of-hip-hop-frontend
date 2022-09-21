@@ -6,11 +6,16 @@
     --cream2: #F1EAE4;
     --red: #C22755;
     --white: #F7F9F9;
+    font-size: 16px;
 }
 
 body {
     margin: 0;
     padding: 0;
+}
+
+.page {
+    min-height: 100vh;
     background-color: var(--cream2);
 }
 
@@ -33,6 +38,10 @@ code {
     height: 2px;
     border-radius: 2px;
     background: linear-gradient(111.3deg, var(--yellow) 9.6%, var(--red) 93.6%);
+}
+
+#loading {
+    width: 100vw;
 }
 
 /* FONTS */
