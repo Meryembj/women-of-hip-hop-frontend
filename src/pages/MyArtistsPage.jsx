@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import MyArtistCard from "../components/MyArtists/MyArtistCard";
-import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 
 function MyArtists() {
   const [artists, setArtists] = useState([]);
+  const [refresh, setRefresh] = useState(true);
 
   useEffect(() => {
     axios
@@ -14,14 +15,17 @@ function MyArtists() {
         },
       })
       .then((response) => {
-        console.log("response.data", response.data);
         setArtists(response.data);
+        setRefresh(false);
       });
-  }, []);
+  }, [refresh]);
   return (
     <>
       <div>
         <h3>All the artists you created</h3>
+        <Link to="/createArtist">
+          <button>Create a new artist</button>
+        </Link>
         {artists.map((artist) => {
           return (
             <div key={artist._id}>
@@ -31,6 +35,7 @@ function MyArtists() {
                 miniBio={artist.miniBio}
                 flagSong={artist.flagSong}
                 artist={artist}
+                setRefresh={setRefresh}
               />
             </div>
           );

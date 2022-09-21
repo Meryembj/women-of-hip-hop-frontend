@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Album from "../components/AllAlbums/AlbumCard";
-import Navbar from "../components/Navbar";
 
 function Albums() {
   const [albums, setAlbums] = useState([]);
@@ -14,7 +13,6 @@ function Albums() {
         },
       })
       .then((response) => {
-        console.log("response.data", response.data);
         setAlbums(response.data);
       });
   }, []);

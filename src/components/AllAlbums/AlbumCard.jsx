@@ -1,7 +1,5 @@
-import "./Albums.css";
 import React from "react";
 import { Link } from "react-router-dom";
-import Favorite from "../Favorites/Favorite";
 
 const Album = ({ name, picture, artist, album }) => {
   return (
@@ -17,7 +15,6 @@ const Album = ({ name, picture, artist, album }) => {
                 <Link to={`/albums/${album._id}`} key={album._id}>
                   <button className="btn btn-primary">Details</button>
                 </Link>
-                <Favorite></Favorite>
               </div>
             </div>
           </div>
@@ -26,5 +23,4 @@ const Album = ({ name, picture, artist, album }) => {
     </div>
   );
 };
-
 export default Album;
