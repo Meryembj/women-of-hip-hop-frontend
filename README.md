@@ -4,7 +4,7 @@
 
 Backend link: https://women-of-hip-hop.herokuapp.com/
 
-Frontend link:
+Frontend link: wohh.netlify.app
 
 
 ## Pages
