@@ -4,15 +4,18 @@ import AlbumCard from "../components/Albums/AlbumCard";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = "https://women-of-hip-hop.herokuapp.com/albums/myAlbums";
+
 function MyAlbums() {
   const [albums, setAlbums] = useState([]);
   const [refresh, setRefresh] = useState(true);
+
 
   const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get("https://women-of-hip-hop.herokuapp.com/albums/myAlbums", {
+      .get(`${API_URL}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },

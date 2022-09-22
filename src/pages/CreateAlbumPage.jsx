@@ -4,6 +4,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import CreateArtistForm from "../components/Artists/CreateArtistForm";
 
+const API_URL = "https://women-of-hip-hop.herokuapp.com/albums";
+
 export const CreateAlbum = () => {
   const [name, setName] = useState("");
   const [picture, setPicture] = useState();
@@ -17,7 +19,7 @@ export const CreateAlbum = () => {
     e.preventDefault();
     axios
       .post(
-        "https://women-of-hip-hop.herokuapp.com/albums",
+        `${API_URL}`,
         { name, picture, songs, artist },
         {
           headers: {
