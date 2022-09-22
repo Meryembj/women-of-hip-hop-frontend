@@ -9,7 +9,6 @@ function MyArtists() {
   const [artists, setArtists] = useState([]);
   const [refresh, setRefresh] = useState(true);
 
-
   useEffect(() => {
     axios
       .get(`${API_URL}`, {
@@ -27,16 +26,12 @@ function MyArtists() {
       <div>
         <h3>All the artists you created</h3>
         <Link to="/createArtist">
-          <button>Create a new artist</button>
+          <button className="btn btn-success">Create a new artist</button>
         </Link>
         {artists.map((artist) => {
           return (
-            <ArtistCard
-              key={artist._id}
-              artist={artist}
-              type="mine"
-              setRefresh={setRefresh}
-            />
+            <ArtistCard key={artist._id} artist={artist} type="mine"
+              setRefresh={setRefresh} />
           );
         })}
       </div>

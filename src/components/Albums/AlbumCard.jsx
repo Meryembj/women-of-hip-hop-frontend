@@ -11,10 +11,9 @@ const API_URL = "https://women-of-hip-hop.herokuapp.com/albums";
 const AlbumCard = ({ album, type, setRefresh }) => {
   const [showForm, setShowForm] = useState(false);
 
-  const handleSubmit = (event) => {
+  const deleteAlbum = (event) => {
     event.preventDefault();
-    axios
-      .delete(`${API_URL}/${album._id}`, {
+    axios.delete(`${API_URL}/${album._id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },
@@ -23,7 +22,6 @@ const AlbumCard = ({ album, type, setRefresh }) => {
         if (setRefresh) setRefresh(true);
       });
   };
-
 
   if (!album)
     return (<></>);
@@ -46,18 +44,13 @@ const AlbumCard = ({ album, type, setRefresh }) => {
                 </Link>
                 {type === "mine" && (
                   <>
-                    <button
-                      className="btn btn-warning"
-                      onClick={() => setShowForm(true)}
-                    >
-                      {showForm && <UpdateAlbum />} Update
+                    <button className="btn btn-warning" onClick={() => setShowForm(true)}>
+                      Update
                     </button>
-                    <button
-                      className="btn btn-danger"
-                      onClick={(event) => handleSubmit(event)}
-                    >
+                    <button className="btn btn-danger" onClick={(event) => deleteAlbum(event)}>
                       <FcFullTrash></FcFullTrash>
                     </button>
+                    {showForm && <UpdateAlbum requestId={album._id} setRefresh={setRefresh} />}
                   </>
                 )}
               </div>

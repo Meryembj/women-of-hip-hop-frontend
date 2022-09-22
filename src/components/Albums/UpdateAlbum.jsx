@@ -1,45 +1,36 @@
 import axios from "axios";
 import { useState, useContext } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 
 const API_URL = "https://women-of-hip-hop.herokuapp.com/albums";
 
-function UpdateAlbum(props) {
+function UpdateAlbum({ requestId, setRefresh }) {
   const [newAlbumName, setNewAlbum] = useState("");
   const [newPicture, setNewPicture] = useState("");
   const [newSongs, setNewSongs] = useState("");
   const [newArtist, setNewArtist] = useState("");
 
-  const { id } = useParams();
-
-  const navigate = useNavigate();
-
-  const handleSubmit = async (event) => {
+  const sendUpdate = async (event) => {
     event.preventDefault();
-    axios
-      .patch(
-        `${API_URL}/${id}`,
-        {
-          name: newAlbumName,
-          picture: newPicture,
-          artist: newArtist,
-          songs: newSongs,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-          },
-        }
-      )
+    const body = {};
+    if (newAlbumName !== '')
+      body.name = newAlbumName;
+    if (newPicture !== '')
+      body.picture = newPicture;
+    if (newArtist !== '')
+      body.artist = newArtist;
+    if (newSongs !== '')
+      body.songs = newSongs;
+
+    axios.patch(`${API_URL}/${requestId}`, body,
+        { headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` } })
       .then((response) => {
-        console.log(response);
-        navigate("/myAlbums");
+        setRefresh(true);
       });
   };
   return (
     <div>
       <h1>Update your album</h1>
-      <form onSubmit={handleSubmit} className="form-group">
+      <form onSubmit={sendUpdate} className="form-group">
         <label>New Album Name:</label>
         <input
           className="form-control"
@@ -69,7 +60,7 @@ function UpdateAlbum(props) {
           onChange={(event) => setNewArtist(event.target.value)}
         />
 
-        <button onClick={(event) => handleSubmit(event)}>Update</button>
+        <button onClick={(event) => sendUpdate(event)}>Update</button>
       </form>
     </div>
   );

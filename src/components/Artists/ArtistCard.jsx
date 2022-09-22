@@ -11,19 +11,21 @@ const API_URL = "https://women-of-hip-hop.herokuapp.com";
 const ArtistCard = ({ artist, type, setRefresh }) => {
   const [showForm, setShowForm] = useState(false);
 
-  const handleSubmit = (event) => {
+  const deleteArtist = (event) => {
     event.preventDefault();
-    axios
-      .delete(`${API_URL}/artists/${artist._id}`, {
+    axios.delete(`${API_URL}/artists/${artist._id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },
       })
       .then((response) => {
-        setRefresh(true);
+        if (setRefresh)
+          setRefresh(true);
       });
   };
 
+  if (!artist)
+    return (<></>);
   return (
     <div className="container">
       <div className="row">
@@ -31,24 +33,25 @@ const ArtistCard = ({ artist, type, setRefresh }) => {
           <div className="card" style={{ width: "18rem" }}>
             <img
               className="card-img-top"
-              src={artist.picture}
+              src={artist?.picture}
               alt="profile"
             ></img>
             <div className="card-body">
-              <h5 className="card-title">{artist.name}</h5>
-              <p className="card-text">{artist.miniBio}</p>
-              <p className="card-text">{artist.flagSong}</p>
+              <h5 className="card-title">{artist?.name}</h5>
+              <p className="card-text">{artist?.miniBio}</p>
+              <p className="card-text">{artist?.flagSong}</p>
 
               <Favorite artist={artist} setRefresh={setRefresh}
                         favoriteId={type !== 'mine' && type !== 'all' ? type : null}/>
               {type === 'mine' &&
                <>
                  <button className="btn btn-success" onClick={() => setShowForm(true)}>
-                   {showForm && <UpdateArtist />}
+                   Update
                  </button>
                  <button className="btn btn-danger"
-                         onClick={(event) => handleSubmit(event)}>
+                         onClick={(event) => deleteArtist(event)}>
                    <FcFullTrash></FcFullTrash></button>
+                 {showForm && <UpdateArtist requestId={artist._id}  setRefresh={setRefresh} />}
                </>
               }
             </div>

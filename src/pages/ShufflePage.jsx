@@ -7,6 +7,7 @@ import YouTube from 'react-youtube';
 
 // COMPONENTS
 import Navbar from '../components/Navbar';
+import Favorite from '../components/Favorites/Favorite';
 import { TbArrowsShuffle } from 'react-icons/tb';
 
 const API_URL = 'https://women-of-hip-hop.herokuapp.com/artists/shuffle';
@@ -40,12 +41,11 @@ function Shuffle(props) {
     <>
       <div id="shuffleMain">
         <div className='userActionsContainer'>
-          {!artist && <h1 className="cool post-click">Click to discover a random artist</h1>}
-          {artist && <h1 className="cool pre-click">Go again</h1>}
-          <button id='shuffle' className={!artist ? 'pre-click' : 'post-click'}
-                  onClick={() => getRandomArtist()}>
+          {!artist && <h1 className="cool">Click to discover a random artist</h1>}
+          <button id='shuffle' onClick={() => getRandomArtist()}>
             <TbArrowsShuffle size={70}/>
           </button>
+          <Favorite artist={artist} size={70}/>
         </div>
         {artist && <div className="randomArtist">
                      <div className="info">
