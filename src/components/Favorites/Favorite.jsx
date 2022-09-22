@@ -47,7 +47,7 @@ const Favorite = ({ favoriteId, artist, setRefresh }) => {
     return(<></>);
   return (
     <div>
-      <FcLike onClick={addToFavorite}></FcLike>
+      <FcLike className="btn btn-warning" onClick={addToFavorite}></FcLike>
       {favoriteId && <button onClick={deleteFromFavorites}>Delete</button>}
     </div>
   );

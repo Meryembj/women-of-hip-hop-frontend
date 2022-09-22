@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import AlbumDetails from "../components/Albums/AlbumDetails";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { FcLeft } from "react-icons/fc";
+
 
 const API_URL = "https://women-of-hip-hop.herokuapp.com/albums";
 
 function AlbumDetailsPage() {
   const [album, setAlbum] = useState([]);
+  const navigate = useNavigate();
 
   const { id } = useParams();
 
@@ -25,6 +28,8 @@ function AlbumDetailsPage() {
 
   return (
     <div>
+      <FcLeft onClick={() => navigate(-1)}>Go back</FcLeft>
+
       <AlbumDetails
         name={album.name}
         picture={album.picture}
