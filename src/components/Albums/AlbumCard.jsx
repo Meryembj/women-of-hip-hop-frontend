@@ -26,6 +26,8 @@ const AlbumCard = ({ album, type, setRefresh }) => {
   };
 
   console.log(album);
+  if (!album)
+    return (<></>);
   return (
     <div className="container">
       <div className="row">
@@ -33,8 +35,8 @@ const AlbumCard = ({ album, type, setRefresh }) => {
           <div className="card" style={{ width: "18rem" }}>
             <h5 className="card-title">{album.artist?.name}</h5>
             <div className="card-deck">
-              <img className="card-img-top" src={album.picture} alt="Card cap"></img>
-              <div className="card-header">{album.name}</div>
+              <img className="card-img-top" src={album?.picture} alt="Card cap"></img>
+              <div className="card-header">{album?.name}</div>
               <div className="card-body">
                 <Link to={`/albums/${album._id}`} key={album._id}>
                   <button className="btn btn-primary">Details</button>
