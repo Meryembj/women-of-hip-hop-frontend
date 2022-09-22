@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import MyAlbum from "../components/MyAlbums/MyAlbumCard";
+import AlbumCard from "../components/Albums/AlbumCard";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -33,16 +33,12 @@ function MyAlbums() {
         <ul>
           {albums.map((album) => {
             return (
-              <div key={album._id}>
-                <MyAlbum
-                  name={album.name}
-                  picture={album.picture}
-                  songs={album.songs}
-                  artist={album.artist.name}
-                  album={album}
-                  setRefresh={setRefresh}
-                />
-              </div>
+              <AlbumCard
+                key={album._id}
+                album={album}
+                type="mine"
+                setRefresh={setRefresh}
+              />
             );
           })}
         </ul>

@@ -11,7 +11,7 @@ const AlbumDetails = ({ albumId, name, picture, artist, album, songs }) => {
             <div className="card-deck">
               {/*  <img className="card-img-top" src={picture} alt="Card cap"></img> */}
               <div className="list-group">
-                <li class="list-group-item">{songs}</li>
+                <li className="list-group-item">{songs}</li>
               </div>
             </div>
           </div>

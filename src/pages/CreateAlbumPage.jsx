@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import CreateArtistForm from "../components/CreateArtistForm";
-import Navbar from "../components/Navbar";
+import CreateArtistForm from "../components/Artists/CreateArtistForm";
 
 export const CreateAlbum = () => {
   const [name, setName] = useState("");
@@ -38,37 +37,37 @@ export const CreateAlbum = () => {
   return (
     <div>
       <h1>Create a new album</h1>
-      <form onSubmit={handleSubmit} class="form-group">
+      <form onSubmit={handleSubmit} className="form-group">
         <label>Album Name:</label>
         <input
-          class="form-control"
+          className="form-control"
           value={name}
           type="text"
           onChange={(event) => setName(event.target.value)}
         />
         <label>Picture:</label>
         <input
-          class="form-control"
+          className="form-control"
           value={picture}
           type="text"
           onChange={(event) => setPicture(event.target.value)}
         />
         <label>Songs:</label>
         <input
-          class="form-control"
+          className="form-control"
           value={songs}
           type="text"
           onChange={(event) => setSongs(event.target.value)}
         />
         <label>Artist:</label>
         <input
-          class="form-control"
+          className="form-control"
           value={artist}
           type="text"
           onChange={(event) => setArtist(event.target.value)}
         />
 
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Create
         </button>
         {errorMessage && (

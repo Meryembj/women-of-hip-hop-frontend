@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import MyArtistCard from "../components/MyArtists/MyArtistCard";
+import ArtistCard from "../components/Artists/ArtistCard";
 import { Link } from "react-router-dom";
 
 function MyArtists() {
@@ -28,16 +28,10 @@ function MyArtists() {
         </Link>
         {artists.map((artist) => {
           return (
-            <div key={artist._id}>
-              <MyArtistCard
-                name={artist.name}
-                picture={artist.picture}
-                miniBio={artist.miniBio}
-                flagSong={artist.flagSong}
-                artist={artist}
-                setRefresh={setRefresh}
-              />
-            </div>
+              <ArtistCard key={artist._id}
+                          artist={artist}
+                          type="mine"
+                          setRefresh={setRefresh}/>
           );
         })}
       </div>

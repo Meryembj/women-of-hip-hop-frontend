@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Artist from "../components/AllArtists/ArtistCard";
-import Favorite from "../components/Favorites/Favorite";
-//import Navbar from "../components/Navbar";
+import ArtistCard from "../components/Artists/ArtistCard";
 
 function Artists() {
   const [artists, setArtists] = useState([]);
@@ -21,23 +19,15 @@ function Artists() {
 
   return (
     <>
+      <h3>List of Artists</h3>
       <div>
-        <h3>List of Artists</h3>
-        <div>
-          {artists.map((artist) => {
-            return (
-              <div key={artist._id}>
-                <Artist
-                  name={artist.name}
-                  picture={artist.picture}
-                  miniBio={artist.miniBio}
-                  flagSong={artist.flagSong}
-                />
-                <Favorite artistId={artist._id} />
-              </div>
-            );
-          })}
-        </div>
+        {artists.map((artist) => {
+          return (
+            <ArtistCard key={artist._id}
+                        artist={artist}
+                        type="all"/>
+          );
+        })}
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Favorite from "../components/Favorites/Favorite";
-import Artist from "../components/AllArtists/ArtistCard";
+import ArtistCard from "../components/Artists/ArtistCard";
 
 const API_URL = "https://women-of-hip-hop.herokuapp.com/favorites";
 
@@ -28,12 +28,7 @@ function Favorites() {
         {favorites.map((favorite) => {
           return (
             <li key={favorite._id}>
-              <Artist
-                name={favorite.artist_id.name}
-                picture={favorite.artist_id.picture}
-                miniBio={favorite.artist_id.miniBio}
-                flagSong={favorite.artist_id.flagSong}
-              />
+              <ArtistCard type="all" artist={favorite}/>
               {/* <Artist /> */}
             </li>
           );

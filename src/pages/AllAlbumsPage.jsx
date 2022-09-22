@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Album from "../components/AllAlbums/AlbumCard";
+import AlbumCard from "../components/Albums/AlbumCard";
 
 function Albums() {
   const [albums, setAlbums] = useState([]);
@@ -13,29 +13,24 @@ function Albums() {
         },
       })
       .then((response) => {
+        console.log(response.data);
         setAlbums(response.data);
       });
   }, []);
 
   return (
     <>
-      <div>
         <h3>List of albums</h3>
         <div>
           {albums.map((album) => {
             return (
-              <div key={album._id}>
-                <Album
-                  name={album.name}
-                  picture={album.picture}
-                  artist={album.artist}
-                  album={album}
-                />
-              </div>
+              <AlbumCard key={album._id}
+                     album={album}
+                     type="all"
+              />
             );
           })}
         </div>
-      </div>
     </>
   );
 }

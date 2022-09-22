@@ -13,16 +13,19 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/HomePage";
 import Profile from "./pages/ProfilePage";
-import Albums from "./pages/AllAlbumsPage";
-import Artists from "./pages/AllArtistsPage";
-import Favorites from "./pages/FavoritesPage";
-import NewAlbum from "./pages/CreateAlbumPage";
-import NewArtist from "./pages/CreateArtistPage";
-import MyAlbums from "./pages/MyAlbumPage";
-import MyArtists from "./pages/MyArtistsPage";
 import Shuffle from "./pages/ShufflePage";
-import AlbumDetailsPage from "./pages/AlbumDetails";
 import NotFound from "./pages/NotFoundPage";
+
+import Albums from "./pages/AllAlbumsPage";
+import NewAlbum from "./pages/CreateAlbumPage";
+import MyAlbums from "./pages/MyAlbumPage";
+import AlbumDetailsPage from "./pages/AlbumDetails";
+
+import Artists from "./pages/AllArtistsPage";
+import NewArtist from "./pages/CreateArtistPage";
+import MyArtists from "./pages/MyArtistsPage";
+
+import Favorites from "./pages/FavoritesPage";
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -33,16 +36,21 @@ function App() {
 
         <Route path="/" element={<ProtectedRoute />}>
           {isLoggedIn && <Route path="/" element={<Home />} />}          
-          <Route path="/albums" element={<Albums />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/artists" element={<Artists />} />
-          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/shuffle" element={<Shuffle shuffleImg={shuffleImage}/>} />
+
+          <Route path="/albums" element={<Albums />} />
           <Route path="/myAlbums" element={<MyAlbums />} />
           <Route path="/createAlbum" element={<NewAlbum />} />
+          <Route path="/albums/:id" element={<AlbumDetailsPage />} />
+
+
+          <Route path="/artists" element={<Artists />} />
           <Route path="/myArtists" element={<MyArtists />} />
           <Route path="/createArtist" element={<NewArtist />} />
-          <Route path="/shuffle" element={<Shuffle shuffleImg={shuffleImage}/>} />
-          <Route path="/albums/:id" element={<AlbumDetailsPage />} />
+
+          <Route path="/favorites" element={<Favorites />} />
+
           <Route path="*" element={ <NotFound /> } />
         </Route>
       </Routes>

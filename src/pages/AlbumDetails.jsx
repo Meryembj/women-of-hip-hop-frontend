@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import AlbumDetails from "../components/AllAlbums/AlbumDetails";
+import AlbumDetails from "../components/Albums/AlbumDetails";
 import { useParams } from "react-router-dom";
 
 const API_URL = "https://women-of-hip-hop.herokuapp.com/albums";
