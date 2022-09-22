@@ -3,6 +3,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = "https://women-of-hip-hop.herokuapp.com/artists";
+
 function CreateArtistForm(props) {
   const [name, setName] = useState("");
   const [picture, setPicture] = useState("");
@@ -10,11 +12,12 @@ function CreateArtistForm(props) {
   const [flagSong, setFlagSong] = useState("");
   const navigate = useNavigate();
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     axios
       .post(
-        "https://women-of-hip-hop.herokuapp.com/artists",
+        `${API_URL}`,
         { name, picture, miniBio, flagSong },
         {
           headers: {

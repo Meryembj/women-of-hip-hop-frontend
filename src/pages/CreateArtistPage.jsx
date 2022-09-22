@@ -2,18 +2,21 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = "https://women-of-hip-hop.herokuapp.com/artists";
+
 export const CreateArtist = () => {
   const [name, setName] = useState("");
   const [picture, setPicture] = useState();
   const [miniBio, setMiniBio] = useState("");
   const [flagSong, setFlagSong] = useState("");
+
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     axios
       .post(
-        "https://women-of-hip-hop.herokuapp.com/artists",
+        `${API_URL}`,
         { name, picture, miniBio, flagSong },
         {
           headers: {

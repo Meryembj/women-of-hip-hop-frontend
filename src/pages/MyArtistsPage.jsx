@@ -3,13 +3,16 @@ import axios from "axios";
 import ArtistCard from "../components/Artists/ArtistCard";
 import { Link } from "react-router-dom";
 
+const API_URL = "https://women-of-hip-hop.herokuapp.com/artists/myArtists";
+
 function MyArtists() {
   const [artists, setArtists] = useState([]);
   const [refresh, setRefresh] = useState(true);
 
+
   useEffect(() => {
     axios
-      .get("https://women-of-hip-hop.herokuapp.com/artists/myArtists", {
+      .get(`${API_URL}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },
@@ -28,10 +31,12 @@ function MyArtists() {
         </Link>
         {artists.map((artist) => {
           return (
-              <ArtistCard key={artist._id}
-                          artist={artist}
-                          type="mine"
-                          setRefresh={setRefresh}/>
+            <ArtistCard
+              key={artist._id}
+              artist={artist}
+              type="mine"
+              setRefresh={setRefresh}
+            />
           );
         })}
       </div>
