@@ -28,7 +28,7 @@ function MyAlbums() {
       <div>
         <h3>All the albums you created</h3>
         <Link to="/createAlbum">
-          <button>Create a new album</button>
+          <button className="btn btn-success">Create a new album</button>
         </Link>
         <ul>
           {albums.map((album) => {

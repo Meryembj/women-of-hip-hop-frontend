@@ -45,7 +45,7 @@ const ArtistCard = ({ artist, type, setRefresh }) => {
               {type === "mine" && (
                 <>
                   <button
-                    class="btn btn-success"
+                    className="btn btn-success"
                     onClick={() => setShowForm(true)}
                   >
                     {showForm && <UpdateArtist />} Update
