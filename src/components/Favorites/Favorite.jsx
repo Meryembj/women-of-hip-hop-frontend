@@ -28,7 +28,9 @@ const Favorite = ({ artistId }) => {
 
   return (
     <div className="album">
-      <FcLike onClick={addToFavorite}></FcLike>
+      <button className="btn btn-warning" onClick={addToFavorite}>
+        <FcLike></FcLike>
+      </button>
     </div>
   );
 };

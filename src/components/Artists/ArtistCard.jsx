@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 
 // COMPONENTS
-import { FcLike, FcLikePlaceholder, FcFullTrash } from "react-icons/fc";
+import { FcFullTrash } from "react-icons/fc";
 import UpdateArtist from "./UpdateArtist";
 import Favorite from "../Favorites/Favorite";
 
@@ -29,7 +29,11 @@ const ArtistCard = ({ artist, type, setRefresh }) => {
       <div className="row">
         <div className="col">
           <div className="card" style={{ width: "18rem" }}>
-            <img className="card-img-top" src={artist.picture} alt="profile"></img>
+            <img
+              className="card-img-top"
+              src={artist.picture}
+              alt="profile"
+            ></img>
             <div className="card-body">
               <h5 className="card-title">{artist.name}</h5>
               <p className="card-text">{artist.miniBio}</p>
@@ -38,16 +42,22 @@ const ArtistCard = ({ artist, type, setRefresh }) => {
               {/* <FcLikePlaceholder> */}
               {/*   <FcLike></FcLike> */}
               {/* </FcLikePlaceholder> */}
-              {type === 'mine' &&
-               <>
-                 <button onClick={() => setShowForm(true)}>
-                   {showForm && <UpdateArtist />}
-                 </button>
-                 <button className="btn btn-danger"
-                         onClick={(event) => handleSubmit(event)}>
-                   Delete</button>
-               </>
-              }
+              {type === "mine" && (
+                <>
+                  <button
+                    class="btn btn-success"
+                    onClick={() => setShowForm(true)}
+                  >
+                    {showForm && <UpdateArtist />} Update
+                  </button>
+                  <button
+                    className="btn btn-danger"
+                    onClick={(event) => handleSubmit(event)}
+                  >
+                    <FcFullTrash></FcFullTrash>
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>
