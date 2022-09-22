@@ -35,7 +35,7 @@ function App() {
         {!isLoggedIn && <Route path="/" element={<LandingPage />} />}
 
         <Route path="/" element={<ProtectedRoute />}>
-          {isLoggedIn && <Route path="/" element={<Home />} />}          
+          <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/shuffle" element={<Shuffle shuffleImg={shuffleImage}/>} />
 
@@ -43,7 +43,6 @@ function App() {
           <Route path="/myAlbums" element={<MyAlbums />} />
           <Route path="/createAlbum" element={<NewAlbum />} />
           <Route path="/albums/:id" element={<AlbumDetailsPage />} />
-
 
           <Route path="/artists" element={<Artists />} />
           <Route path="/myArtists" element={<MyArtists />} />

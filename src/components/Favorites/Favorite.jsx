@@ -8,7 +8,7 @@ import ArtistCard from "../Artists/ArtistCard";
 
 const API_URL = "https://women-of-hip-hop.herokuapp.com/favorites";
 
-const Favorite = ({ favoriteId, artist, setRefresh }) => {
+const Favorite = ({ favoriteId, artist, setRefresh, size }) => {
   const [favorites, setFavorites] = useState([]);
 
   const deleteFromFavorites = (event) => {
@@ -20,20 +20,13 @@ const Favorite = ({ favoriteId, artist, setRefresh }) => {
     })
       .then((response) => {
         if (setRefresh)
-        {
-          console.log('hello?')
           setRefresh(true);
-        }
       });
   };
   
   const addToFavorite = () => {
-    axios
-      .post(
-        API_URL,
-        { artist_id: artist._id },
-        {
-          headers: {
+    axios.post(API_URL, { artist_id: artist._id },
+        { headers: {
             Authorization: `Bearer ${localStorage.getItem("authToken")}`,
           },
         }
@@ -47,8 +40,14 @@ const Favorite = ({ favoriteId, artist, setRefresh }) => {
     return(<></>);
   return (
     <div>
-      <FcLike className="btn btn-warning" onClick={addToFavorite}></FcLike>
-      {favoriteId && <button onClick={deleteFromFavorites}>Delete</button>}
+      <button id='bootstrap-override'
+              className="btn btn-warning" onClick={addToFavorite}>
+        <FcLike size={size} />
+      </button>
+      {favoriteId &&
+       <button className="btn btn-danger" onClick={deleteFromFavorites}>
+         Delete
+       </button>}
     </div>
   );
 };
