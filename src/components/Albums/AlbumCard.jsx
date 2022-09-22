@@ -45,7 +45,7 @@ const AlbumCard = ({ album, type, setRefresh }) => {
                 {type === "mine" && (
                   <>
                     <button
-                      class="btn btn-warning"
+                      className="btn btn-warning"
                       onClick={() => setShowForm(true)}
                     >
                       {showForm && <UpdateAlbum />} Update

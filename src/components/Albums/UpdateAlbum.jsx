@@ -39,31 +39,31 @@ function UpdateAlbum(props) {
   return (
     <div>
       <h1>Update your album</h1>
-      <form onSubmit={handleSubmit} class="form-group">
+      <form onSubmit={handleSubmit} className="form-group">
         <label>New Album Name:</label>
         <input
-          class="form-control"
+          className="form-control"
           value={newAlbumName}
           type="text"
           onChange={(event) => setNewAlbum(event.target.value)}
         />
         <label>New Picture:</label>
         <input
-          class="form-control"
+          className="form-control"
           value={newPicture}
           type="text"
           onChange={(event) => setNewPicture(event.target.value)}
         />
         <label>New Songs:</label>
         <input
-          class="form-control"
+          className="form-control"
           value={newSongs}
           type="text"
           onChange={(event) => setNewSongs(event.target.value)}
         />
         <label>New Artist:</label>
         <input
-          class="form-control"
+          className="form-control"
           value={newArtist}
           type="text"
           onChange={(event) => setNewArtist(event.target.value)}
