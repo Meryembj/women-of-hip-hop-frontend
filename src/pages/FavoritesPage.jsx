@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Favorite from "../components/Favorites/Favorite";
 import ArtistCard from "../components/Artists/ArtistCard";
 
 const API_URL = "https://women-of-hip-hop.herokuapp.com/favorites";
 
 function Favorites() {
   const [favorites, setFavorites] = useState([]);
+  const [refresh, setRefresh] = useState(true);
 
   useEffect(() => {
     axios
@@ -16,10 +16,10 @@ function Favorites() {
         },
       })
       .then((response) => {
-        console.log("response.data", response.data);
         setFavorites(response.data);
+        setRefresh(false);
       });
-  }, []);
+  }, [refresh]);
 
   return (
     <div>
@@ -28,8 +28,7 @@ function Favorites() {
         {favorites.map((favorite) => {
           return (
             <li key={favorite._id}>
-              <ArtistCard type="all" artist={favorite}/>
-              {/* <Artist /> */}
+              <ArtistCard artist={favorite.artist_id} type={favorite._id} setRefresh={setRefresh}/>
             </li>
           );
         })}

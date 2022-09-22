@@ -1,19 +1,37 @@
 import React from "react";
-import { FcLike } from "react-icons/fc";
 import axios from "axios";
-
 import { useState, useEffect } from "react";
+
+// COMPONENTS
+import { FcLike } from "react-icons/fc";
+import ArtistCard from "../Artists/ArtistCard";
 
 const API_URL = "https://women-of-hip-hop.herokuapp.com/favorites";
 
-const Favorite = ({ artistId }) => {
+const Favorite = ({ favoriteId, artist, setRefresh }) => {
   const [favorites, setFavorites] = useState([]);
 
+  const deleteFromFavorites = (event) => {
+    event.preventDefault();
+    axios.delete(`${API_URL}/${favoriteId}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+      },
+    })
+      .then((response) => {
+        if (setRefresh)
+        {
+          console.log('hello?')
+          setRefresh(true);
+        }
+      });
+  };
+  
   const addToFavorite = () => {
     axios
       .post(
         API_URL,
-        { artist_id: artistId },
+        { artist_id: artist._id },
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -21,14 +39,16 @@ const Favorite = ({ artistId }) => {
         }
       )
       .then((response) => {
-        console.log("response.data", response.data);
         setFavorites(response.data);
       });
   };
 
+  if (!artist)
+    return(<></>);
   return (
-    <div className="album">
+    <div>
       <FcLike onClick={addToFavorite}></FcLike>
+      {favoriteId && <button onClick={deleteFromFavorites}>Delete</button>}
     </div>
   );
 };

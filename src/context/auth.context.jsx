@@ -26,7 +26,7 @@ function AuthProviderWrapper(props) {
     navigate('/');
   };
 
-  // Check local storage for an authentication token and updates the state variables.
+  // Check local storage for an authentication token and update the state variables.
   const authenticateUser = () => {
     const storedToken = localStorage.getItem('authToken');
     if (storedToken) {

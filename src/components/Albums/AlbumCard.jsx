@@ -25,7 +25,6 @@ const AlbumCard = ({ album, type, setRefresh }) => {
       });
   };
 
-  console.log(album);
   if (!album)
     return (<></>);
   return (

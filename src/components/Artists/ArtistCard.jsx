@@ -6,7 +6,7 @@ import { FcLike, FcLikePlaceholder, FcFullTrash } from "react-icons/fc";
 import UpdateArtist from "./UpdateArtist";
 import Favorite from "../Favorites/Favorite";
 
-const API_URL = "https://women-of-hip-hop.herokuapp.com/artists";
+const API_URL = "https://women-of-hip-hop.herokuapp.com";
 
 const ArtistCard = ({ artist, type, setRefresh }) => {
   const [showForm, setShowForm] = useState(false);
@@ -14,7 +14,7 @@ const ArtistCard = ({ artist, type, setRefresh }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .delete(`${API_URL}/${artist._id}`, {
+      .delete(`${API_URL}/artists/${artist._id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },
@@ -34,10 +34,8 @@ const ArtistCard = ({ artist, type, setRefresh }) => {
               <h5 className="card-title">{artist.name}</h5>
               <p className="card-text">{artist.miniBio}</p>
               <p className="card-text">{artist.flagSong}</p>
-              <Favorite artistId={artist._id} />
-              {/* <FcLikePlaceholder> */}
-              {/*   <FcLike></FcLike> */}
-              {/* </FcLikePlaceholder> */}
+              <Favorite artist={artist} setRefresh={setRefresh}
+                        favoriteId={type !== 'mine' && type !== 'all' ? type : null}/>
               {type === 'mine' &&
                <>
                  <button onClick={() => setShowForm(true)}>
